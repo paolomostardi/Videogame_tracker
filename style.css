@@ -1,4 +1,14 @@
 
+
+button{
+    background-color: rgb(85, 84, 84);
+    border-radius: 5%;
+    border:0px solid rgb(66, 116, 182);  
+    width: 200px; 
+    height: 40px;
+    
+}
+
 .header {
     overflow: hidden;
     background-color: #f1f1f1;
@@ -22,33 +32,124 @@
     font-weight: bold;
   }
   
-  /* Change the background color on mouse-over */
   .header a:hover {
     background-color: #ddd;
     color: black;
   }
   
-  /* Style the active/current link*/
   .header a.active {
     background-color: dodgerblue;
     color: white;
   }
   
-  /* Float the link section to the right */
   .header-right {
     float: right;
   }
   
+
+  .center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
   .features{
+    position: relative;
     background-color: rgb(169, 169, 173);
     margin-left: auto;
     margin-right: auto;
-    width: 33%;
+    width: 100%;
+    align-items: center;
+    padding: 30px;
   }
 
 
   .image{
-    width: 15%;
-    height: 15%;
-
+    width: 300px;
   }
+
+
+.column {
+    float: left;
+    width: 30;
+    padding-top: 10px;
+    padding-left: 15px;
+  }
+  
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+
+  .column2 {
+    float: right;
+    width: 30;
+    padding-top: 10px;
+    padding-right: 15px;
+  }
+  
+  .row2::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+
+
+.circle {
+    background-color:rgb(184, 184, 184);
+    border:3px solid rgb(66, 116, 182);    
+    height:100px;
+    border-radius:50%;
+    width:100px;
+    
+}
+
+
+
+
+.firstblob{
+    position: relative;
+}
+
+
+.firstblob2{
+    position: relative;
+}
+
+.attribute{
+    position: absolute;
+    top: 80px;
+    right: 20%;
+}
+.attribute2{
+    position: absolute;
+    top: 80px;
+    left: 20%;
+
+}
+
+
+
+.sharepic{
+    width: 50px;
+    position: relative;
+    bottom: 75px;
+    left: 25px;
+}
+
+
+.sharepic2{
+    position: relative;
+    width: 50px;
+    bottom: 75px;
+    left: 25px;
+}
+
+
+
