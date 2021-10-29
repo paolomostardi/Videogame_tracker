@@ -26,8 +26,8 @@ require("php/main.php");
 						<span class="imgholder"></span>
 					</div>
 					<div class="details">
-						<span class="title">Assassins Creed 2</span>
-						<span class="desc">Assassins Creed 2 is all about assassinating people!</span>
+						<span class="title">Assassins Creed</span>
+						<span class="desc">Assassins Creed is all about assassinating people!</span>
 					</div>
 					<a class="altbtn">add to list</a>
 				</div>
