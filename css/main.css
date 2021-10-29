@@ -1,0 +1,51 @@
+
+/* global styles to be applied on all pages */
+
+* {
+	font-family:Arial;
+}
+
+body {
+	margin:0;
+	background-color:#dfefff;
+}
+
+a {
+	text-decoration:none;
+	color:black;
+}
+
+#content {
+	display:flex;
+	margin:30px auto 20px auto;
+	width:100%;
+}
+
+.altbtn {
+	padding:5px 25px;
+	background-color:white;
+	border:1px solid #999;
+	border-top:0;
+	border-radius:0 0 10px 10px;
+}
+.altbtn:hover {
+	background-color:#999;
+	transition:background-color 0.1s, color 0.1s;
+	color:white;
+}
+
+#main-section {
+	display:flex;
+	flex-direction:column;
+	margin:0 auto;
+	width:60%;
+}
+#main-section > * {
+	border: 1px solid black;
+	padding:20px;
+	background-color:whitesmoke;
+	margin-bottom:20px;
+}
+#main-section > *:last-child {
+	margin-bottom:0;
+}
