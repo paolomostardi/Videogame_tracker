@@ -86,6 +86,11 @@
 	background-color:#999;
 	color:white;
 }
+#header .altbtn:hover {
+	background-color:#999;
+	transition:background-color 0.1s, color 0.1s;
+	color:white;
+}
 
 .navbtn, #header .altbtn {
 	text-decoration:none;
