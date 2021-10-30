@@ -6,20 +6,19 @@
 	justify-content:center;
 	align-items:center;
 	padding:0;
+	width:60%;
 }
 #search span {
 	font-style:italic;
 }
 #search-game-list {
-	padding:7px 10px;
-	margin-left:10px;
-	font-style:italic;
 	width:30%;
 }
 
-#games-list {
+#game-list {
 	display:flex;
 	flex-direction:column;
+	width:60%;
 }
 
 .game {

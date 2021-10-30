@@ -1,16 +1,17 @@
 <?php
 require("php/main.php");
+$pagename = basename(__FILE__, '.php');
 ?>
 
 <html>
 <head>
 	<?php htmlHead(); ?>
-	<link rel="stylesheet" href="css/game-list.css">
+	<link rel="stylesheet" href="css/<?php echo $pagename ?>.css">
 </head>
 
 <body>
 	
-	<?php htmlHeader(); ?>
+	<?php htmlHeader($pagename); ?>
 	
 	<div id="content">
 		<section id="main-section">
@@ -29,7 +30,7 @@ require("php/main.php");
 						<span class="title">Assassins Creed</span>
 						<span class="desc">Assassins Creed is all about assassinating people!</span>
 					</div>
-					<a class="altbtn">add to list</a>
+					<button class="altbtn">add to list</button>
 				</div>
 				<div class="game">
 					<div class="coverimg-container">
@@ -39,7 +40,7 @@ require("php/main.php");
 						<span class="title">Dark Souls</span>
 						<span class="desc">Dark Souls is a very difficult game to beat.</span>
 					</div>
-					<a class="altbtn">add to list</a>
+					<button class="altbtn">add to list</button>
 				</div>
 				<div class="game">
 					<div class="coverimg-container">
@@ -49,7 +50,7 @@ require("php/main.php");
 						<span class="title">Minecraft</span>
 						<span class="desc">Minecraft is a sandbox game that players can craft things in!</span>
 					</div>
-					<a class="altbtn">add to list</a>
+					<button class="altbtn">add to list</button>
 				</div>
 				<div class="game">
 					<div class="coverimg-container">
@@ -59,7 +60,7 @@ require("php/main.php");
 						<span class="title">Counter-Strike</span>
 						<span class="desc">Counter-Strike is a tactical first-person shooter.</span>
 					</div>
-					<a class="altbtn">add to list</a>
+					<button class="altbtn">add to list</button>
 				</div>
 				<div class="game">
 					<div class="coverimg-container">
@@ -69,7 +70,7 @@ require("php/main.php");
 						<span class="title">Far Cry</span>
 						<span class="desc">Far Cry is an open world exploration game with a narrative!</span>
 					</div>
-					<a class="altbtn">add to list</a>
+					<button class="altbtn">add to list</button>
 				</div>
 			</div>
 		</section>

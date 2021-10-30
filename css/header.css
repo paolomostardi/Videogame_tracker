@@ -51,6 +51,10 @@ position:relative;
 	height:4px;
 	background-color:#999;
 }
+.navbtn[selected] {
+	background-color:#999;
+	color:white;
+}
 .navbtn:hover {
 	background-color:#999;
 	transition:background-color 0.1s, color 0.1s;
@@ -59,21 +63,25 @@ position:relative;
 
 
 
-#altbtns {
+#header #altbtns {
 	display:flex;
 	position:absolute;
 	top:0;
 	right:30px;
 }
 
-.altbtn-container {
+#header .altbtn-container {
 	display:flex;
 	margin-right:5px;
 	margin-bottom:auto;
 }
-.altbtn-container:first-of-type {
+#header .altbtn-container:first-of-type {
 	margin-left:0;
 }
-.altbtn-container:last-of-type {
+#header .altbtn-container:last-of-type {
 	margin-right:0;
+}
+#header .altbtn[selected] {
+	background-color:#999;
+	color:white;
 }
