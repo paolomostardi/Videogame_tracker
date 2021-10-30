@@ -1,19 +1,30 @@
 
-#main-section #search {
-	background-color:unset;
-	border:unset;
+#main-section #game-list-options {
+	padding:10px;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+#search-game-list-container,
+#sort-game-list-container {
 	display:flex;
 	justify-content:center;
 	align-items:center;
-	padding:0;
-	width:60%;
+	padding:10px;
 }
-#search span {
+#search-game-list-container span,
+#sort-game-list-container span {
 	font-style:italic;
 }
 #search-game-list {
-	width:30%;
+	width:100%;
 }
+#sort-game-list {
+	width:100%;
+}
+
+
+
 
 #game-list {
 	display:flex;
@@ -42,7 +53,7 @@
 .imgholder {
 	width:120px;
 	height:175px;
-	background-color:#fdd;
+	background-color:var(--bg-color);
 }
 
 .details {

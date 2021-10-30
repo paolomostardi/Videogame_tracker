@@ -15,9 +15,22 @@ $pagename = basename(__FILE__, '.php');
 	<div id="content">
 		<section id="main-section">
 			
-			<div id="search">
-				<span>search:</span>
-				<input id="search-game-list" type="text" placeholder="game name...">
+			<div id="game-list-options">
+				<div id="search-game-list-container">
+					<span>search:</span>
+					<input id="search-game-list" type="text" placeholder="game name...">
+				</div>
+				<div id="sort-game-list-container">
+					<span>sort:</span>
+					<select id="sort-game-list">
+						<option value="rating-desc">rating (desc)</option>
+						<option value="rating-asc">rating (asc)</option>
+						<option value="age-desc">age (desc)</option>	
+						<option value="age-asc">age (asc)</option>
+						<option value="alphabetical-desc">alphabetical (asc)</option>
+						<option value="alphabetical-desc">alphabetical (desc)</option>
+					</select>
+				</div>
 			</div>
 			
 			<div id="game-list">

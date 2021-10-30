@@ -12,6 +12,7 @@ $pagename = basename(__FILE__, '.php');
 <body>
 	
 	<?php htmlHeader($pagename); ?>
+	
 	<div id="content">
 		<section id="main-section">
 			<div id="login-form-container" class="account-form-container">
