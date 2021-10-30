@@ -5,8 +5,7 @@ $pagename = basename(__FILE__, '.php');
 
 <html>
 <head>
-	<?php htmlHead(); ?>
-	<link rel="stylesheet" href="css/<?php echo $pagename ?>.css">
+	<?php htmlHead($pagename); ?>
 </head>
 
 <body>

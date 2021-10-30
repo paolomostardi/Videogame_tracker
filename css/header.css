@@ -22,6 +22,7 @@
 }
 
 
+
 #navbtns {
 	display:flex;
 	margin:10px 15px;
@@ -39,7 +40,7 @@
 	display:flex;
 	background-color:#fff;
 	padding:10px 40px;
-position:relative;
+	position:relative;
 }
 .navbtn::after {
 	content:"";
@@ -84,4 +85,9 @@ position:relative;
 #header .altbtn[selected] {
 	background-color:#999;
 	color:white;
+}
+
+.navbtn, #header .altbtn {
+	text-decoration:none;
+	color:black;
 }
