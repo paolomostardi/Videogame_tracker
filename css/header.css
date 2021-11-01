@@ -1,0 +1,93 @@
+
+#header {
+	display:flex;
+	width:100%;
+	align-items:center;
+	position:sticky;
+	top:0;
+	z-index:100;
+}
+
+
+/* the navigation bar */
+
+
+#navbar {
+	display:flex;
+	width:100%;
+	align-items:center;
+	justify-content:space-between;
+	background-color:#ddd;
+	border-bottom:1px solid black;
+}
+
+
+
+#navbtns {
+	display:flex;
+	margin:10px 15px;
+}
+.navbtn-container {
+	margin-right:10px
+}
+.navbtn-container:first-of-type {
+}
+.navbtn-container:last-of-type {
+	margin-right:0;
+	border:0;
+}
+.navbtn {
+	display:flex;
+	background-color:#fff;
+	padding:10px 40px;
+	position:relative;
+}
+.navbtn::after {
+	content:"";
+	position:absolute;
+	bottom:0;
+	width:100%;
+	left:50%;
+	transform:translateX(-50%);
+	height:4px;
+	background-color:#999;
+}
+.navbtn[selected] {
+	background-color:#999;
+	color:white;
+}
+.navbtn:hover {
+	background-color:#999;
+	transition:background-color 0.1s, color 0.1s;
+	color:white;
+}
+
+
+
+#header #altbtns {
+	display:flex;
+	position:absolute;
+	top:0;
+	right:30px;
+}
+
+#header .altbtn-container {
+	display:flex;
+	margin-right:5px;
+	margin-bottom:auto;
+}
+#header .altbtn-container:first-of-type {
+	margin-left:0;
+}
+#header .altbtn-container:last-of-type {
+	margin-right:0;
+}
+#header .altbtn[selected] {
+	background-color:#999;
+	color:white;
+}
+
+.navbtn, #header .altbtn {
+	text-decoration:none;
+	color:black;
+}

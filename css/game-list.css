@@ -1,0 +1,68 @@
+
+#main-section #search {
+	background-color:unset;
+	border:unset;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	padding:0;
+	width:60%;
+}
+#search span {
+	font-style:italic;
+}
+#search-game-list {
+	width:30%;
+}
+
+#game-list {
+	display:flex;
+	flex-direction:column;
+	width:60%;
+}
+
+.game {
+	display:flex;
+	background-color:white;
+	padding:10px;
+	border:1px solid #aaa;
+	margin-bottom:10px;
+	position:relative;
+}
+.game:last-of-type {
+	margin-bottom:0
+}
+
+.coverimg-container,
+.details {
+	display:flex;
+	flex-direction:column;
+}
+
+.imgholder {
+	width:120px;
+	height:175px;
+	background-color:#fdd;
+}
+
+.details {
+	margin-left:10px;
+}
+
+.details .title {
+	border-bottom:1px solid black;
+	margin-right:auto;
+	font-weight:bold;
+	font-size:14pt;
+}
+
+.details .desc {
+	margin-top:10px;
+	margin-left:5px;
+}
+
+.game .altbtn {
+	position:absolute;
+	top:0;
+	right:5%;
+}

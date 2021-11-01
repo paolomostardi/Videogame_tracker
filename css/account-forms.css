@@ -1,0 +1,50 @@
+
+.account-form {
+	background-color:white;
+	display:flex;
+	flex-direction:column;
+	align-items:flex-end;
+	padding:20px;
+	border:1px solid #aaa;
+}
+
+.account-form > * {
+	margin-bottom:15px;
+}
+.account-form > *:last-child {
+	margin-bottom:0;
+}
+
+#title-container {
+	display:flex;
+	width:100%;
+	justify-content:center;
+	margin-bottom:15px;
+}
+#title {
+	font-weight:bold;
+	font-size:14pt;
+	border-bottom:2px solid #999;
+}
+
+
+
+#submit-container {
+	display:flex;
+	width:100%;
+	justify-content:center;
+	margin-top:15px;
+}
+#submit {
+	padding:5px 20px;
+}
+
+#info-container {
+	display:flex;
+	margin-top:15px;
+	justify-content:center;
+}
+#info-container span {
+	color:#666;
+	font-size:11pt;
+}
