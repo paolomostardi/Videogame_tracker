@@ -1,5 +1,5 @@
 .imgholder {
-	width:120px;
+	width:175px;
 	height:175px;
 	background-color:#fdd;
 }
@@ -9,4 +9,10 @@
 .details {
 	display:flex;
 	flex-direction:column;
+}
+
+
+#main-section{
+	width: 500px;
+	background-color: black;
 }

@@ -30,8 +30,6 @@
 .navbtn-container {
 	margin-right:10px
 }
-.navbtn-container:first-of-type {
-}
 .navbtn-container:last-of-type {
 	margin-right:0;
 	border:0;

@@ -1,5 +1,6 @@
 <?php
 require("main.php");
+require("db-connection");
 $pagename = basename(__FILE__, '.php');
 ?>
 
@@ -9,20 +10,35 @@ $pagename = basename(__FILE__, '.php');
 	<link rel="stylesheet" href="../css/account-forms.css">
 </head>
 
-<body>
-	
-	<?php htmlHeader($pagename); ?>
-	<div id="content">
-		<section id="main-section">
-			<div id="register-form-container" class="account-form-container">
-				<div id="title-container">
-					<span id="title">account created</span>
-				</div>
-				<div class = "main-text-container">
-				
-			</div>
-		</section>
-	</div>
+<?php
+	session_start();
+	if(isset($_SESSION["loggedin"]) === false)
+	{
+		header("location: login.php");
+		exit;
+	}
 
-</body>
+	$username = $_SESSION["username"];
+	$bios 		= get_bios($_SESSION["id"])
+
+?> 
+
+	<body>
+		<?php htmlHeader($pagename); ?>
+		<div id="content">
+			<section id="main-section">
+					<div id="username">
+						<span id="title"><?php echo $username ?></span>
+					</div>
+					<button>edit</button>
+					<div class="coverimg-container">
+						<span class="imgholder"></span>
+					</div>
+					<div class = "bios">
+						<?php echo $username ?>
+					</div>
+			</section>
+		</div>
+
+	</body>
 </html>

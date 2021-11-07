@@ -39,20 +39,16 @@ $pagename = basename(__FILE__, '.php');
         $password   = $_POST["password"];  
         $email      = $_POST["email"];  
 
-        
-        $sql = "select MAX(user_id) from user";
-        $result =  $connection->query($sql);
-        $row = $result->fetch_assoc();
-        echo $row["id"];
+        $sql 		= "SELECT MAX(user_id) AS max_id FROM user ";
+        $result 	= $connection->query($sql);
+        $row 		= $result->fetch_array();
+        $id 		= $row["max_id"] + 1;
 
-        $sql = "INSERT INTO user (email, passwordd, username)
-        VALUES ('$username', '$password', '$email')";
-        if ($connection->query($sql) === TRUE) {
-            echo "New record created successfully";
-        } 
-        else {
-            echo "Error: " . $sql . "<br>" . $connection->error;
-        }
-    ?>
+		$sql 		= "INSERT INTO user (email, passwordd, username,user_id)
+        			   VALUES ('$username', '$password', '$email','$id')";
+		$result 	= $connection->query($sql);
+	?>
 </body>
+
+
 </html>
