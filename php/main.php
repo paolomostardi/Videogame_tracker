@@ -13,6 +13,7 @@ function htmlHead($pagename) {
 
 //adds the html header, which has the navbar and shit
 function htmlHeader($page = "") {
+	//depending on which page the user is on, select/highlight the nav button for the page they are on
 	$n1 = $n2 = $n3 = $a1 = $a2 = "";
 	switch ($page) {
 		case "game-list":
