@@ -51,6 +51,4 @@ $pagename = basename(__FILE__, '.php');
 		$result 	= $connection->query($sql);
 	?>
 </body>
-
-
 </html>

@@ -2,7 +2,11 @@
 require("main.php");
 require("db-connection.php");
 $pagename = basename(__FILE__, '.php');
-session_start();
+
+if($_SESSION["loggedin"] == false) {
+	header("location: login.php");
+	exit;
+}
 ?>
 
 <html>
@@ -12,11 +16,15 @@ session_start();
 
 <body>
 	
-	<?php loggedInHtmlHeader($pagename); ?>
+	<?php htmlHeader($pagename); ?>
+	
 	
 	<div id="content">
 		<section id="main-section">
-			<?php getListId($_SESSION["id"]);?>
+			<?php $listID = getListId($_SESSION["id"]); 
+			if ($listID === false) {
+				echo "no list :(";
+			} ?>
 		</section>
 	</div>
 	

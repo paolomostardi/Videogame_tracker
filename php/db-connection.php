@@ -17,13 +17,15 @@ function CloseCon($conn)
 
 function getAttributeFromTable($attribute,$table,$id)
  {
-   $connection       = OpenCon();
-   $sql 					= "SELECT {$attribute} FROM {$table} WHERE {$table}_id = {$id}";
-	$stmt 				= $connection->prepare($sql);
-	$stmt				  -> execute();
-   $result				= $stmt   -> get_result();
-	$row					= $result -> fetch_row();
-   return $row[0];
+	$connection			= OpenCon();
+	$sql				= "SELECT {$attribute} FROM {$table} WHERE {$table}_id = {$id}";
+	$stmt				= $connection->prepare($sql);
+	$stmt				-> execute();
+	$result				= $stmt -> get_result();
+	$row				= $result -> fetch_row();
+	// if no result found then return false
+	$result = is_null($row) ? false : $row[0]; 
+	return $result;
  }
 
  function getUsername($userId)
