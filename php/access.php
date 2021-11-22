@@ -1,11 +1,8 @@
-
-
 <?php
-    require("main.php");
+  require("main.php");
 	require("db-connection.php");
 	
-	if($_SERVER["REQUEST_METHOD"] == "POST")
-	{
+	if($_SERVER["REQUEST_METHOD"] == "POST") {
 		$connection 			= OpenCon();
 		$username_inserted 		= trim($_POST["username"]);
 		$password_inserted 		= trim($_POST["password"]);
@@ -20,24 +17,19 @@
 		$email 					= $row[2];
 		$password 				= $row[3];
 
-		if ($password_inserted == $password)
-		{
+		if ($password_inserted == $password) {
 			echo "correct password";
 			$_SESSION["loggedin"] 	= true;
 			$_SESSION["id"] 		= $id;
 			$_SESSION["username"] 	= $username; 
 			header("location: profile.php");
 			exit;
-		}
-        else
-		{
+      
+		} else {
 			header("location: login.php");
 			exit;
-        }
+    }
 
 	}
 	
 ?>
-
-
-

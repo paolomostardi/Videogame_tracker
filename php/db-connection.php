@@ -3,9 +3,10 @@ function OpenCon()
 {
    $dbhost     = "localhost";
    $dbuser     = "root";
-   $dbpass     = "";
-   $db         = "vgt";
-   $conn       = new mysqli($dbhost, $dbuser, $dbpass,$db);
+   $dbpass     = "1234";
+   $db         = "videogame_tracker";
+   $conn       = new mysqli($dbhost, $dbuser, $dbpass,$db) or 
+               die("Connect failed: %s\n". $conn -> error);
    return      $conn;
 }
  
