@@ -15,10 +15,6 @@ $pagename = basename(__FILE__, '.php');
 	<div id="content">
 		<section id="main-section">
 			
-			<div id="search">
-				<span>search:</span>
-				<input id="search-game-list" type="text" placeholder="game name...">
-			</div>
 			
 			<div id="game-list">
 				<div class="game">
@@ -29,7 +25,7 @@ $pagename = basename(__FILE__, '.php');
 						<span class="title">Assassins Creed</span>
 						<span class="desc">Assassins Creed is all about assassinating people!</span>
 					</div>
-					<button class="altbtn">add to list</button>
+					<button class="altbtn">add to list</button>	
 				</div>
 				<div class="game">
 					<div class="coverimg-container">

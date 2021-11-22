@@ -1,7 +1,7 @@
 .imgholder {
 	width:175px;
 	height:175px;
-	background-color:#fdd;
+	background-color:rgb(251, 216, 216);
 }
 
 
@@ -11,8 +11,3 @@
 	flex-direction:column;
 }
 
-
-#main-section{
-	width: 500px;
-	background-color: black;
-}

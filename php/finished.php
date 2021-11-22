@@ -34,6 +34,8 @@ $pagename = basename(__FILE__, '.php');
 	</div>
     <?php
         
+		//to do: move this in a separete file 
+
         $connection = OpenCon();
         $username   = $_POST["username"];  
         $password   = $_POST["password"];  
@@ -45,7 +47,7 @@ $pagename = basename(__FILE__, '.php');
         $id 		= $row["max_id"] + 1;
 
 		$sql 		= "INSERT INTO user (email, passwordd, username,user_id)
-        			   VALUES ('$username', '$password', '$email','$id')";
+        			   VALUES ('$email', '$password', '$username','$id')";
 		$result 	= $connection->query($sql);
 	?>
 </body>
