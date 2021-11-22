@@ -30,8 +30,6 @@
 .navbtn-container {
 	margin-right:10px
 }
-.navbtn-container:first-of-type {
-}
 .navbtn-container:last-of-type {
 	margin-right:0;
 	border:0;
@@ -84,11 +82,6 @@
 }
 #header .altbtn[selected] {
 	background-color:#999;
-	color:white;
-}
-#header .altbtn:hover {
-	background-color:#999;
-	transition:background-color 0.1s, color 0.1s;
 	color:white;
 }
 

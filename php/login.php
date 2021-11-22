@@ -1,16 +1,19 @@
 <?php
-require("php/main.php");
-$pagename = basename(__FILE__, '.php');
+	require("main.php");
+	require("db-connection.php");
+	$pagename = basename(__FILE__, '.php');
 ?>
 
 <html>
 <head>
 	<?php htmlHead($pagename); ?>
-	<link rel="stylesheet" href="/css/account-forms.css">
+	<link rel="stylesheet" href="../css/account-forms.css">
 </head>
+ 
+
 
 <body>
-	
+
 	<?php htmlHeader($pagename); ?>
 	
 	<div id="content">
@@ -19,13 +22,13 @@ $pagename = basename(__FILE__, '.php');
 				<div id="title-container">
 					<span id="title">login</span>
 				</div>
-				<form id="login-form" class="account-form">
+				<form action="access.php" method="post" id="login-form" class="account-form">
 					<div class="input-container" id="username-container">
-						<span>username:</span>
+						<span>Username</span>
 						<input id="username" name="username" type="text" placeholder="username...">
 					</div>
 					<div class="input-container" id="password-container">
-						<span>password:</span>
+						<span>Password</span>
 						<input id="password" name="password" type="password" placeholder="password...">
 					</div>
 					<div id="submit-container">
@@ -38,6 +41,7 @@ $pagename = basename(__FILE__, '.php');
 			</div>
 		</section>
 	</div>
-	
+
+
 </body>
 </html>

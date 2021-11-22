@@ -24,12 +24,10 @@
 #title {
 	font-weight:bold;
 	font-size:14pt;
-	border-bottom:2px solid #666;
+	border-bottom:2px solid #999;
 }
 
-.input-container {
-	
-}
+
 
 #submit-container {
 	display:flex;

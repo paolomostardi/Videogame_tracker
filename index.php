@@ -1,5 +1,6 @@
 <?php
 //redirect
-header("Location: game-list.php");
+
+header("Location: php/game-list.php");
 die();
 ?>

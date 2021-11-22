@@ -1,17 +1,13 @@
 
 /* global styles to be applied on all pages */
 
-:root {
-	--bg-color:#b0d0ff;
-}
-
 * {
 	font-family:Arial;
 }
 
 body {
 	margin:0;
-	background-color:var(--bg-color);
+	background-color:#ccfbec;
 }
 
 form {
@@ -19,8 +15,7 @@ form {
 }
 
 input[type="text"],
-input[type="password"],
-select  {
+input[type="password"]  {
 	padding:7px 10px;
 	margin-left:10px;
 	font-style:italic;
