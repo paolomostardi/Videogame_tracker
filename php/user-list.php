@@ -7,7 +7,15 @@ session_start();
 
 <html>
 <head>
-	<?php htmlHead($pagename); ?>
+	<?php htmlHead($pagename);
+		if ($_SESSION["loggedin"] == FALSE)
+			header("location: login.php"); 
+	?>
+	<script src="../javascript/script.js"></script>
+
+	<script>
+
+	</script>
 </head>
 
 <body>
@@ -15,8 +23,11 @@ session_start();
 	<?php loggedInHtmlHeader($pagename); ?>
 	
 	<div id="content">
+
 		<section id="main-section">
 			<?php getListId($_SESSION["id"]);?>
+			<p id = "par">asdasdasd</p>
+			<button onclick = read() >hello</button>
 		</section>
 	</div>
 	

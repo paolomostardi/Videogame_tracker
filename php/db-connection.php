@@ -61,5 +61,11 @@ function getAttributeFromTable($attribute,$table,$id)
    
  }
 
+ if($_SERVER["REQUEST_METHOD"] == "POST")
+ {
+  $id = "bruh";
+  echo $id;
+ } 
+
 
 ?>
