@@ -1,7 +1,7 @@
 <?php
   require("main.php");
-	require("db-connection.php");
-	
+  require("db-connection.php");
+
 	if($_SERVER["REQUEST_METHOD"] == "POST") {
 		$connection 			= OpenCon();
 		$username_inserted 		= trim($_POST["username"]);
