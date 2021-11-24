@@ -14,20 +14,19 @@
 
 <body>
 
-
 	<?php htmlHeader($pagename); ?>
-	<form action="access.php" method="post">
+	
 	<div id="content">
 		<section id="main-section">
 			<div id="login-form-container" class="account-form-container">
 				<div id="title-container">
 					<span id="title">login</span>
 				</div>
-				<form id="login-form" class="account-form">
+				<form action="access.php" method="post" id="login-form" class="account-form">
 					<div class="input-container" id="username-container">
 						<span>Username</span>
 						<input id="username" name="username" type="text" placeholder="username...">
-					</div> <br>
+					</div>
 					<div class="input-container" id="password-container">
 						<span>Password</span>
 						<input id="password" name="password" type="password" placeholder="password...">
@@ -42,7 +41,6 @@
 			</div>
 		</section>
 	</div>
-    </form>
 
 
 </body>

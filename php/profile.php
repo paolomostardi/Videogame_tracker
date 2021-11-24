@@ -1,8 +1,14 @@
 <?php
 require("main.php");
 require("db-connection.php");
-session_start();
 $pagename = basename(__FILE__, '.php');
+
+if($_SESSION["loggedin"] == false) {
+	header("location: login.php");
+	exit;
+}
+
+$username = getUsername($_SESSION["id"]);
 ?>
 
 <html>
@@ -10,20 +16,6 @@ $pagename = basename(__FILE__, '.php');
 	<?php htmlHead($pagename); ?>
 	<link rel="stylesheet" href="../css/account-forms.css">
 </head>
-
-
-<?php
-
-	if(isset($_SESSION["loggedin"]) === false)
-	{
-		header("location: login.php");
-		exit;
-	}
-
-	
-	
-	$username = getUsername($_SESSION["id"]);
-?> 
 
 <body>
 
