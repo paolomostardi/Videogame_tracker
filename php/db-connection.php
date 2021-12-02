@@ -3,8 +3,8 @@ function OpenCon()
 {
    $dbhost     = "localhost";
    $dbuser     = "root";
-   $dbpass     = "1234";
-   $db         = "videogame_tracker";
+   $dbpass     = "";
+   $db         = "vgt";
    $conn       = new mysqli($dbhost, $dbuser, $dbpass,$db) or 
                die("Connect failed: %s\n". $conn -> error);
    return      $conn;
@@ -17,13 +17,16 @@ function CloseCon($conn)
 
 function getAttributeFromTable($attribute,$table,$id)
  {
-   $connection       = OpenCon();
-   $sql 					= "SELECT {$attribute} FROM {$table} WHERE {$table}_id = {$id}";
-	$stmt 				= $connection->prepare($sql);
-	$stmt				  -> execute();
-   $result				= $stmt   -> get_result();
-	$row					= $result -> fetch_row();
-   return $row[0];
+	$connection = OpenCon();
+	$sql = "SELECT {$attribute} FROM {$table} WHERE {$table}_id = {$id}";
+	$stmt = $connection->prepare($sql);
+	$stmt->execute();
+	$result	= $stmt->get_result();
+	$row = $result->fetch_row();
+	
+	//if found nothing then dont explode
+	$val = is_null($row) ? NULL : $row[0];
+	return $val;
  }
 
  function getUsername($userId)

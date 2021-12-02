@@ -18,7 +18,6 @@
 		$password 				= $row[3];
 
 		if ($password_inserted == $password) {
-			echo "correct password";
 			$_SESSION["loggedin"] 	= true;
 			$_SESSION["id"] 		= $id;
 			$_SESSION["username"] 	= $username; 

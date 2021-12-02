@@ -15,7 +15,6 @@ $pagename = basename(__FILE__, '.php');
 	<div id="content">
 		<section id="main-section">
 			
-			
 			<div id="game-list">
 				<div class="game">
 					<div class="coverimg-container">
@@ -68,6 +67,7 @@ $pagename = basename(__FILE__, '.php');
 					<button class="altbtn">add to list</button>
 				</div>
 			</div>
+			
 		</section>
 	</div>
 	
