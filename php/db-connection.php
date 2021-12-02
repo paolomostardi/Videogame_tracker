@@ -1,22 +1,22 @@
 <?php
-function OpenCon()
-{
-   $dbhost     = "localhost";
-   $dbuser     = "root";
-   $dbpass     = "";
-   $db         = "vgt";
-   $conn       = new mysqli($dbhost, $dbuser, $dbpass,$db) or 
-               die("Connect failed: %s\n". $conn -> error);
-   return      $conn;
+function OpenCon() {
+	$cfg = parse_ini_file(dirname(getcwd())."/database.cfg");
+	
+	//use values provided in database.cfg to select mysql database. default values are below
+	$dbhost = $cfg["hostname"] ?? "localhost";
+	$dbuser = $cfg["username"] ?? "root";
+	$dbpass = $cfg["password"] ?? "";
+	$db = $cfg["database"] ?? "videogame_tracker";
+	$conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);
+	
+	return $conn;
 }
  
-function CloseCon($conn)
-{
+function CloseCon($conn) {
    $conn -> close();
 }
 
-function getAttributeFromTable($attribute,$table,$id)
- {
+function getAttributeFromTable($attribute,$table,$id) {
 	$connection = OpenCon();
 	$sql = "SELECT {$attribute} FROM {$table} WHERE {$table}_id = {$id}";
 	$stmt = $connection->prepare($sql);

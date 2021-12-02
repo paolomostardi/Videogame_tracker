@@ -44,8 +44,8 @@ CREATE TABLE `user` (
   `user_id` int(11) NOT NULL,
   `username` text NOT NULL,
   `email` text NOT NULL,
-  `passwordd` text NOT NULL,
-  `bios` text DEFAULT '\'I like videogames\'',
+  `password` text NOT NULL,
+  `bios` text,
   `image_id` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -53,7 +53,7 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`user_id`, `username`, `email`, `passwordd`, `bios`, `image_id`) VALUES
+INSERT INTO `user` (`user_id`, `username`, `email`, `password`, `bios`, `image_id`) VALUES
 (5, 'ciao', 'ciao@gmail.com', 'ciao', NULL, 0),
 (6, 'username', 'username@gmail.com', 'password', '\'I like videogames\'', 0);
 

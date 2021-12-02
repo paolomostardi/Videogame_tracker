@@ -12,7 +12,7 @@
 		$stmt				   -> execute();
 		$result				    = $stmt  -> get_result();
 		$row					= $result-> fetch_row();
-		$_SESSION["ting"] == $row;
+		//$_SESSION["ting"] == $row;
 		$id 					= $row[0];
 		$username 				= $row[1];
 		$email 					= $row[2];

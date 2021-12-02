@@ -1,0 +1,68 @@
+<?php
+var_dump(dirname(getcwd())."/database.cfg");
+function OpenCon() {
+	$config = parse_ini_file();
+	$dbhost     = "https://dba.bucomputing.uk/";
+	$dbuser     = "s5328645";
+	$dbpass     = "ERzApLA3AjkFA3h3AXqwRwxRsULuCACg";
+	$db         = "s5328645";
+	$conn       = new mysqli($dbhost, $dbuser, $dbpass,$db) or 
+			   die("Connect failed: %s\n". $conn -> error);
+	return      $conn;
+}
+ 
+function CloseCon($conn)
+{
+   $conn -> close();
+}
+
+function getAttributeFromTable($attribute,$table,$id) {
+	$connection = OpenCon();
+	$sql = "SELECT {$attribute} FROM {$table} WHERE {$table}_id = {$id}";
+	$stmt = $connection->prepare($sql);
+	$stmt->execute();
+	$result	= $stmt->get_result();
+	$row = $result->fetch_row();
+	
+	//if found nothing then dont explode
+	$val = is_null($row) ? NULL : $row[0];
+	return $val;
+ }
+
+ function getUsername($userId)
+ {
+   $attribute  = "username";
+   $table      = "user";
+   $result     = getAttributeFromTable($attribute,$table,$userId);
+   return $result;
+ }
+
+ function getBios($userId){
+   $attribute  = "bios";
+   $table      = "user";
+   $result     = getAttributeFromTable($attribute,$table,$userId);
+   return $result;
+ }
+
+ function getUserImageId($userId){
+   $attribute  = "image_id";
+   $table      = "user";
+   $result     = getAttributeFromTable($attribute,$table,$userId);
+   return $result;
+ }
+
+ function getListId($userId)
+ {
+   $attribute  = "list_id";
+   $table      = "list";
+   $result     = getAttributeFromTable($attribute,$table,$userId);
+   return $result;
+ }
+
+ function getGames($id)
+ {
+   
+ }
+
+
+?>
