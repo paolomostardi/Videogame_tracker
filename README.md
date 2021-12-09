@@ -7,7 +7,7 @@ This program is a thing.
 The Navbar is displayed at the top of every page. It contains the links to all the different pages, allowing the user to easily navigate around the website.
 Each of the following pages will be available within the Navbar:
 
-### game list
+### master game list
 The game list is a list of all the available games within the database. The user can add games to their list by clicking the 'Add to list' button (while logged in). They can view the master game list on the 'Game list' page.
 
 ### user list
@@ -23,6 +23,8 @@ The user can login to their account (assuming they already have one) at the logi
 The user can register an account on the website at the register account page. They will be required to enter a username, password and email. They will also be asked to confirm their password to ensure they have spelt it correctly.
 
 ## a more in-depth look at each process in the program
+
+### master game list
 
 ```javascript
 function addToList(idGame,idUser){
