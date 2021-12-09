@@ -33,8 +33,9 @@ function addToList(idGame,idUser){
         return;
     }
     
-    //when the 'add to list' button is clicked, ajax sends a post request containing data about the selected game.
-    //if the server responds, and adds the game to the user's list successfully, then an alert is displayed
+    // when the 'add to list' button is clicked, ajax sends a post request containing data about the selected game.
+    // if the server responds, and adds the game to the user's list successfully, then an alert is displayed
+    
     $.ajax({
         url: '../php/db-connection.php',
         type: 'post',
