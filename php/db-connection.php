@@ -1,4 +1,5 @@
 <?php
+
 function OpenCon() {
 	$cfg = parse_ini_file(dirname(getcwd())."/database.cfg");
 	
@@ -6,9 +7,9 @@ function OpenCon() {
 	$dbhost = $cfg["hostname"] ?? "localhost";
 	$dbuser = $cfg["username"] ?? "root";
 	$dbpass = $cfg["password"] ?? "";
-	$db = $cfg["database"] ?? "videogame_tracker";
-	$conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);
-	
+	$db     = $cfg["database"] ?? "videogame_tracker";
+	$conn   = new mysqli($dbhost, $dbuser, $dbpass,$db) 
+  or die("Connect failed: %s\n". $conn -> error);
 	return $conn;
 }
  
@@ -16,20 +17,29 @@ function CloseCon($conn) {
    $conn -> close();
 }
 
-function getAttributeFromTable($attribute,$table,$id) {
+function createVideoGameList($userId){
+  
+  $connection   = OpenCon();
+  $description  = "Main list, of the user " . getUsername($userId);
+  $name         = "Main-list";
+  $sql 		      = "INSERT INTO list (description, list_id, name, user_id)
+                   VALUES ('$description', '$userId', '$name','$userId')";
+  $connection  ->query($sql);
+
+ }
+
+function getAttributeFromTable($attributeToGet,$tableFrom,$primaryKey) {
 	$connection = OpenCon();
-	$sql = "SELECT {$attribute} FROM {$table} WHERE {$table}_id = {$id}";
-	$stmt = $connection->prepare($sql);
-	$stmt->execute();
-	$result	= $stmt->get_result();
-	$row = $result->fetch_row();
-	
-	//if found nothing then dont explode
-	$val = is_null($row) ? NULL : $row[0];
+	$sql        = "SELECT {$attributeToGet} FROM {$tableFrom} WHERE {$tableFrom}_id = {$primaryKey}";
+	$stmt       = $connection->prepare($sql);
+	$stmt      -> execute();
+	$result	    = $stmt->get_result();
+	$row        = $result->fetch_row();
+	$val        = is_null($row) ? NULL : $row[0];
 	return $val;
  }
 
- function getUsername($userId)
+function getUsername($userId)
  {
    $attribute  = "username";
    $table      = "user";
@@ -59,10 +69,75 @@ function getAttributeFromTable($attribute,$table,$id) {
    return $result;
  }
 
- function getGames($id)
+ function getGames($listId)
  {
-   
+  $attribute  = "videogame_id";
+  $table      = "videogame_list_connection";
+  $connection = OpenCon();
+	$sql        = "SELECT {$attribute} FROM {$table} WHERE list_id = {$listId}";
+	$stmt       = $connection->prepare($sql);
+	$stmt       ->execute();
+	$result	    = $stmt->get_result();
+  $rows = array();
+  while(!is_null($a = $result->fetch_row() )){
+    array_push($rows,$a[0]);
+  }
+	return $rows;
+ }
+
+ function getVideogameName($gameId){
+  $attribute  = "name";
+  $table      = "videogame";
+  $result     = getAttributeFromTable($attribute,$table,$gameId);
+  return $result;
+ }
+
+ function getVideogameDescription($gameId){
+  $attribute  = "description";
+  $table      = "videogame";
+  $result     = getAttributeFromTable($attribute,$table,$gameId);
+  return $result;
+ }
+
+ function getListOfGames($userId){
+  $listId       = getListId($userId);
+  $listOfGames  = getGames($listId);
+  return $listOfGames;
  }
 
 
+ function removeGameFromUserList($listId,$gameId){
+  $table      = "videogame_list_connection";
+  $connection = OpenCon();
+	$sql        = "DELETE FROM {$table}
+                 WHERE list_id = {$listId} AND videogame_id = {$gameId}";
+	$stmt       = $connection->prepare($sql);
+	$stmt       ->execute();
+ }
+
+ function addGameToList($listId,$gameId){
+  $connection = OpenCon();
+  $sql 		= "INSERT INTO videogame_list_connection (videogame_id, list_id)
+        		 VALUES ('$gameId', '$listId')";
+	$result 	= $connection->query($sql);
+ }
+ 
+
+if (isset($_POST['call'])){
+  if (($_POST['call'] == 1)){
+    $gameId = intval($_POST['idGame']);
+    $userId = intval($_POST['idUser']);
+    $listId = getListId($userId);
+    removeGameFromUserList($listId,$gameId);
+  }
+
+  if (($_POST['call'] == 2)){
+    $gameId = intval($_POST['idGame']);
+    $userId = intval($_POST['idUser']);
+    $listId = getListId($userId);
+    addGameToList($listId,$gameId);
+  }
+}
+
 ?>
+

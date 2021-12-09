@@ -12,7 +12,7 @@
 		$stmt				   -> execute();
 		$result				    = $stmt  -> get_result();
 		$row					= $result-> fetch_row();
-		$_SESSION["ting"] == $row;
+		$_SESSION["ting"] 	    == $row; // what is this
 		$id 					= $row[0];
 		$username 				= $row[1];
 		$email 					= $row[2];
@@ -22,6 +22,7 @@
 			$_SESSION["loggedin"] 	= true;
 			$_SESSION["id"] 		= $id;
 			$_SESSION["username"] 	= $username; 
+			$_SESSION["page"]		= "";
 			header("location: profile.php");
 			exit;
       

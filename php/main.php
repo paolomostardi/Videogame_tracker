@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 $_SESSION["loggedin"] = $_SESSION["loggedin"] ?? false;
 
 //gets the current working directory

@@ -1,52 +1,32 @@
 
 
 
+function renderList(){
 
+        var xhttp = new XMLHttpRequest();
 
-
-function write(messagge)
-{
-par  = document.getElementById("main-section");
-text = document.createTextNode(messagge);
-par.appendChild(text);
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              document.getElementById("game-list").innerHTML = this.responseText;
+          }
+        };
+        xhttp.open("GET", "../php/render.php?id=1&test=method", true);
+        xhttp.send();
 }
 
+renderList();
 
 
-function read(){
-    var xmlhttp = new XMLHttpRequest();
-    
-    alert("12");
-    xmlhttp.open("POST", "../php/db-connection.php", true);
-    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    alert("1e2");
-    xmlhttp.onreadystatechange = function() {
-        
-        if (this.readyState === 4 || this.status === 200){ 
-            write(this.responseText); // echo from php
-            alert("23");
-        }       
-    };
-    xmlhttp.send("id=" + id);
-    alert("34");
+function remove(idGame,idUser){
+
+  $.ajax({
+    url: '../php/db-connection.php',
+    type: 'post',
+    data: { "idGame": idGame,
+            "idUser": idUser,
+            "call"  : 1
+          },
+    success: function(response) { console.log(response); }
+  });
+
 }
-
-function httpGetAsync(theUrl, callback)
-{
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.onreadystatechange = function() { 
-        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
-            callback(xmlHttp.responseText);
-    }
-    xmlHttp.open("GET", theUrl, true); // true for asynchronous 
-    xmlHttp.send(null);
-}
-
-
-
-
-
-
-
-
-

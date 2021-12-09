@@ -49,6 +49,9 @@ $pagename = basename(__FILE__, '.php');
 		$sql 		= "INSERT INTO user (email, passwordd, username,user_id)
         			   VALUES ('$email', '$password', '$username','$id')";
 		$result 	= $connection->query($sql);
+
+
+		createVideoGameList($id);
 	?>
 </body>
 </html>
