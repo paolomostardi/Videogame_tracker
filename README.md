@@ -5,22 +5,22 @@ This section displays a list of all the available games within the database. The
 
 ```javascript
 function addToList(idGame,idUser){
-if (idUser == 0){
-    alert("please login first");
-    return;
-}
-$.ajax({
-url: '../php/db-connection.php',
-type: 'post',
-data: { "idGame": idGame,
-        "idUser": idUser,
-        "call"  : 2
-      },
-success: function(response) { console.log(response); }
-});
-
-alert("game added successfully ")
-
+    if (idUser == 0){
+        alert("please login first");
+        return;
+    }
+    
+    $.ajax({
+        url: '../php/db-connection.php',
+        type: 'post',
+        data: { "idGame": idGame,
+                "idUser": idUser,
+                "call"  : 2
+              },
+        success: function(response) { console.log(response); }
+    });
+    
+    alert("game added successfully ");
 }
 ```
 
