@@ -39,10 +39,11 @@ function addToList(idGame,idUser){
     $.ajax({
         url: '../php/db-connection.php',
         type: 'post',
-        data: { "idGame": idGame,
-                "idUser": idUser,
-                "call"  : 2
-              },
+        data: { 
+            "idGame": idGame,
+            "idUser": idUser,
+            "call"  : 2
+        },
         success: function(response) { console.log(response); }
     });
     
