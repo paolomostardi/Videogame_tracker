@@ -1,5 +1,3 @@
 # Videogame_tracker
 
-##sdfs
-
-##sdfsfd
+## game list
