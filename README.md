@@ -27,7 +27,7 @@ The user can register an account on the website at the register account page. Th
 ### Master game list
 
 ```javascript
-function addToList(idGame,idUser){
+function addToList(idGame,idUser) {
     if (idUser == 0){
         alert("please login first");
         return;
