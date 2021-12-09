@@ -22,20 +22,7 @@ The user can login to their account (assuming they already have one) at the logi
 ### register account page
 The user can register an account on the website at the register account page. They will be required to enter a username, password and email. They will also be asked to confirm their password to ensure they have spelt it correctly.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+## a more in-depth look at each process in the program
 
 ```javascript
 function addToList(idGame,idUser){
