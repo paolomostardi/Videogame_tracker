@@ -1,4 +1,4 @@
-# Videogame_tracker
+# Videogame tracker
 
 ## Overview
 This application allows users to create a list of games which they enjoy. They can create and login to an account, and they can remove/add games from their list.
