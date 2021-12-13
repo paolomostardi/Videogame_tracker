@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 22, 2021 at 04:34 PM
+-- Generation Time: Dec 13, 2021 at 06:47 PM
 -- Server version: 10.4.21-MariaDB
--- PHP Version: 7.3.31
+-- PHP Version: 8.0.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `videogame_tracker`
+-- Database: `vgt`
 --
 
 -- --------------------------------------------------------
@@ -34,6 +34,13 @@ CREATE TABLE `list` (
   `description` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `list`
+--
+
+INSERT INTO `list` (`list_id`, `user_id`, `name`, `description`) VALUES
+(3, 3, 'Main-list', 'Main list, of the user ben');
+
 -- --------------------------------------------------------
 
 --
@@ -45,7 +52,7 @@ CREATE TABLE `user` (
   `username` text NOT NULL,
   `email` text NOT NULL,
   `password` text NOT NULL,
-  `bios` text,
+  `bios` text DEFAULT '\'I like videogames\'',
   `image_id` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -54,8 +61,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `username`, `email`, `password`, `bios`, `image_id`) VALUES
-(5, 'ciao', 'ciao@gmail.com', 'ciao', NULL, 0),
-(6, 'username', 'username@gmail.com', 'password', '\'I like videogames\'', 0);
+(3, 'ben', 'ben', 'ben', '\'I like videogames\'', 0);
 
 -- --------------------------------------------------------
 
@@ -70,6 +76,17 @@ CREATE TABLE `videogame` (
   `name` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `videogame`
+--
+
+INSERT INTO `videogame` (`videogame_id`, `cover_id`, `description`, `name`) VALUES
+(1, 1, 'Assassins Creed is all about assassinating people!', 'Assassins Creed'),
+(2, 2, 'Dark Souls is a very difficult game to beat.', 'Dark Souls'),
+(3, 3, 'Minecraft is a sandbox game that players can craft things in!', 'Minecraft'),
+(4, 4, 'Counter-Strike is a tactical first-person shooter.', 'Counter-Strike'),
+(5, 5, 'Far Cry is an open world exploration game with a narrative!', 'Far Cry');
+
 -- --------------------------------------------------------
 
 --
@@ -80,6 +97,14 @@ CREATE TABLE `videogame_list_connection` (
   `videogame_id` int(11) NOT NULL,
   `list_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `videogame_list_connection`
+--
+
+INSERT INTO `videogame_list_connection` (`videogame_id`, `list_id`) VALUES
+(1, 3),
+(2, 3);
 
 --
 -- Indexes for dumped tables
@@ -108,6 +133,16 @@ ALTER TABLE `videogame`
 --
 ALTER TABLE `videogame_list_connection`
   ADD PRIMARY KEY (`videogame_id`,`list_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

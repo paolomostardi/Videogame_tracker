@@ -2,6 +2,17 @@
 require("main.php");
 require("db-connection.php");
 $pagename = basename(__FILE__, '.php');
+
+
+// add user to database
+$connection = OpenCon();
+$username   = $_POST["username"];  
+$password   = $_POST["password"];  
+$email      = $_POST["email"];  
+$sql 		= "INSERT INTO user (email, password, username) VALUES ('$email', '$password', '$username')";
+$result 	= $connection->query($sql);
+
+createVideoGameList($connection->insert_id);
 ?>
 
 <html>
@@ -32,26 +43,5 @@ $pagename = basename(__FILE__, '.php');
 			</div>
 		</section>
 	</div>
-    <?php
-        
-		//to do: move this in a separete file 
-
-        $connection = OpenCon();
-        $username   = $_POST["username"];  
-        $password   = $_POST["password"];  
-        $email      = $_POST["email"];  
-
-        $sql 		= "SELECT MAX(user_id) AS max_id FROM user ";
-        $result 	= $connection->query($sql);
-        $row 		= $result->fetch_array();
-        $id 		= $row["max_id"] + 1;
-
-		$sql 		= "INSERT INTO user (email, passwordd, username,user_id)
-        			   VALUES ('$email', '$password', '$username','$id')";
-		$result 	= $connection->query($sql);
-
-
-		createVideoGameList($id);
-	?>
 </body>
 </html>

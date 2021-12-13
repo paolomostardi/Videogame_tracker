@@ -7,9 +7,8 @@ function OpenCon() {
 	$dbhost = $cfg["hostname"] ?? "localhost";
 	$dbuser = $cfg["username"] ?? "root";
 	$dbpass = $cfg["password"] ?? "";
-	$db     = $cfg["database"] ?? "videogame_tracker";
-	$conn   = new mysqli($dbhost, $dbuser, $dbpass,$db) 
-  or die("Connect failed: %s\n". $conn -> error);
+	$db     = $cfg["database"] ?? "vgt";
+	$conn   = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);
 	return $conn;
 }
  
@@ -104,6 +103,21 @@ function getUsername($userId)
   $listOfGames  = getGames($listId);
   return $listOfGames;
  }
+ 
+function getMainListOfGames(){
+	$connection = OpenCon();
+	$sql = "SELECT * FROM videogame";
+	$stmt = $connection->prepare($sql);
+	$stmt->execute();
+	$result = $stmt->get_result();
+	
+	$rows = array();
+	while($a = $result->fetch_assoc()) {
+		array_push($rows,$a);
+	}
+	return $rows;
+}
+
 
 
  function removeGameFromUserList($listId,$gameId){

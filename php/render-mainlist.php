@@ -2,8 +2,7 @@
 <?php 
 require("main.php");
 require("db-connection.php");
-$videogameListId = getListOfGames(0);
-
+$videogameList = getMainListOfGames();
 
 function renderUserList($nameGame,$descriptionGame,$gameId){
     if (isset($_SESSION["id"]))
@@ -29,10 +28,8 @@ function renderUserList($nameGame,$descriptionGame,$gameId){
 
 <span>
     <?php 
-        foreach($videogameListId as $videogameId){
-            $name = getVideogameName($videogameId);
-            $descriptionGame = getVideogameDescription($videogameId);
-                renderUserList($name,$descriptionGame,$videogameId);
+        foreach($videogameList as $vg){
+			renderUserList($vg["name"],$vg["description"],$vg["videogame_id"]);
        }
     ?>
 </span> 
