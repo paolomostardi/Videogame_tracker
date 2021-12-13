@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 13, 2021 at 06:52 PM
+-- Generation Time: Dec 13, 2021 at 06:02 PM
 -- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.12
+-- PHP Version: 7.3.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `vgt`
+-- Database: `videogame_tracker`
 --
 
 -- --------------------------------------------------------
@@ -39,7 +39,21 @@ CREATE TABLE `list` (
 --
 
 INSERT INTO `list` (`list_id`, `user_id`, `name`, `description`) VALUES
-(3, 3, 'Main-list', 'Main list, of the user ben');
+(0, 0, 'main-list ', 'main list to display'),
+(7, 7, 'Main-list', '0'),
+(8, 8, 'Main-list', 'Main list, of the user not'),
+(9, 9, 'Main-list', 'Main list, of the user admin'),
+(10, 10, 'Main-list', 'Main list, of the user fitella'),
+(11, 11, 'Main-list', 'Main list, of the user account'),
+(12, 12, 'Main-list', 'Main list, of the user '),
+(13, 13, 'Main-list', 'Main list, of the user '),
+(14, 14, 'Main-list', 'Main list, of the user username'),
+(15, 15, 'Main-list', 'Main list, of the user username'),
+(16, 16, 'Main-list', 'Main list, of the user username'),
+(17, 17, 'Main-list', 'Main list, of the user username'),
+(18, 18, 'Main-list', 'Main list, of the user username'),
+(19, 19, 'Main-list', 'Main list, of the user username'),
+(20, 20, 'Main-list', 'Main list, of the user username');
 
 -- --------------------------------------------------------
 
@@ -61,7 +75,20 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `username`, `email`, `password`, `bios`, `image_id`) VALUES
-(3, 'ben', 'ben', 'ben', '\'I like videogames\'', 0);
+(7, 'gamer', 'gamerlist@list.com', 'list', '\'I like videogames\'', 0),
+(8, 'not', 'aa@mgg.com', 'my', '\'I like videogames\'', 0),
+(9, 'admin', 'email.com', 'password', '\'I like videogames\'', 0),
+(10, 'fitella', 'al', 'francesco', '\'I like videogames\'', 0),
+(11, 'account', 'exemple@gmail.com', 'password', '\'I like videogames\'', 0),
+(12, '', '', '', '\'I like videogames\'', 0),
+(13, '', '', '', '\'I like videogames\'', 0),
+(14, 'username', 'exemple@gmail.com', 'password', '\'I like videogames\'', 0),
+(15, 'username', 'email.com', 'password', '\'I like videogames\'', 0),
+(16, 'username', 'email.com', 'password', '\'I like videogames\'', 0),
+(17, 'username', 'email.com', 'password', '\'I like videogames\'', 0),
+(18, 'username', 'email.com', 'password', '\'I like videogames\'', 0),
+(19, 'username', 'email.com', 'password', '\'I like videogames\'', 0),
+(20, 'username', 'email.com', 'password', '\'I like videogames\'', 0);
 
 -- --------------------------------------------------------
 
@@ -103,8 +130,17 @@ CREATE TABLE `videogame_list_connection` (
 --
 
 INSERT INTO `videogame_list_connection` (`videogame_id`, `list_id`) VALUES
-(1, 3),
-(2, 3);
+(1, 0),
+(1, 7),
+(1, 8),
+(1, 9),
+(2, 0),
+(2, 7),
+(2, 9),
+(2, 14),
+(3, 0),
+(4, 0),
+(5, 0);
 
 --
 -- Indexes for dumped tables
@@ -133,16 +169,6 @@ ALTER TABLE `videogame`
 --
 ALTER TABLE `videogame_list_connection`
   ADD PRIMARY KEY (`videogame_id`,`list_id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `user`
---
-ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
