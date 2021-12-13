@@ -3,6 +3,16 @@
   require("db-connection.php");
 
 	if($_SERVER["REQUEST_METHOD"] == "POST") {
+		
+		if($_POST["username"] === ''){
+			header("location: login.php");
+			exit;
+		}
+		if($_POST["password"] === ''){
+			header("location: login.php");
+			exit;
+		}
+		
 		$connection 			= OpenCon();
 		$username_inserted 		= trim($_POST["username"]);
 		$password_inserted 		= trim($_POST["password"]);
