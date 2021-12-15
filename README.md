@@ -18,7 +18,8 @@ __5.__ Open the file __database.cfg__ and configure the settings correctly (for 
 hostname = "localhost"
 username = "root"
 password = ""
-database = "videogame_tracker" #the name of the database you just created
+#the name of the database you just created
+database = "videogame_tracker"
 ```  
 __6.__ Navigate to _localhost/[relative-path-to-extracted-repository]_
 
