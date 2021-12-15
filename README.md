@@ -7,7 +7,7 @@ This application allows users to create their own list of games which they enjoy
 This application was developed and tested using XAMPP.  
   
 __1.__ Install XAMPP (or equivalent), or (UNTESTED) manually install Apache and MySQL. There are no specific apache/php/mysql configurations required.  
-__2.__ Creator a folder in the htdocs folder in XAMPP or Apache installation. Then clone/download the repository and extract the files to a new folder within the htdocs folder.  
+__2.__ Create a folder in the htdocs folder in XAMPP or Apache installation. Then clone/download the repository and extract the files to a new folder within the htdocs folder.  
 __3.__ Start Apache and MySQL (for XAMPP: open the control panel and click start Apache and MySQL).  
 __4.__ If using XAMPP or phpMyAdmin, Navigate to _localhost/phpmyadmin_ in a web browser.  
 __3.__ Create a new database in MySQL or phpMyAdmin, and for example call it __videogame_tracker__.  
