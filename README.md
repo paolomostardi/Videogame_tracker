@@ -15,11 +15,11 @@ It contains links to different pages, allowing the user to easily navigate aroun
 Each of the webpages in this list will be accessible from the Navbar.
 
 ### Master/main game list
-The user will be able to view a list of all the available games in the database on the 'Game list' page. 
+The user will be able to view a list of all the available games in the database on the 'Game list' page.  
 The user can add games to their own list by clicking the 'Add to list' button (while logged in).
 
 ### User list
-The user will be able to view their game list on the 'My list' page.
+The user will be able to view their game list on the 'My list' page.  
 All the games that the user has added to their list will be added to their user list.  
 
 ### User profile
