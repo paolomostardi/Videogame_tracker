@@ -22,6 +22,10 @@ input[type="password"]  {
 	font-size:11pt;
 }
 
+.hidden {
+	display:none !important;
+}
+
 #content {
 	display:flex;
 	margin:30px auto 20px auto;

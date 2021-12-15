@@ -14,7 +14,8 @@ $username = getUsername($_SESSION["id"]);
 <html>
 <head>
 	<?php htmlHead($pagename); ?>
-	<link rel="stylesheet" href="../css/account-forms.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>	
+	<script src="../javascript/profile.js"></script>
 </head>
 
 <body>
@@ -22,24 +23,42 @@ $username = getUsername($_SESSION["id"]);
 <?php htmlHeader($pagename); ?>
 	<div id="content">
 		<section id="main-section">
-			<div id="login-form-container" class="account-form-container">
-				
-				<div id="title-container">
-					<span id="title"><?php echo $username?></span>
+			<div id="profile-container">
+				<div id="profile">
+					<button id="edit" class="altbtn">edit mode</button>
+					<div id="img-container">
+							<span id="img-holder" class="img-holder">
+								<img id="profile-img" src="<?php echo "..".$_SESSION["img"]; ?>">
+							</span>
+							<div id="edit-img-container" class="hidden">
+								<input title="New image..." type="file" id="fileupload-img" accept="image/png, image/jpeg" class="hidden">
+								<label id="fileupload-img-btn" for="fileupload-img" >Select image</label>
+							</div>
+					</div>
+						
+					<div id="username-bio-container">
+						<div id="username-container">
+							<span id="username"><?php echo $username?></span>
+						</div>
+						
+						<div id="bio-container">
+							<span id="bio"><?php echo getBios($_SESSION["id"]) ?></span>
+							<div id="edit-bio-container" class="hidden">
+								<textarea id='new-bio'></textarea>
+							</div>
+							<div id="submit-container" class="hidden">
+								<span id="edit-img-status-msg" class="status-msg">Image unchanged</span>
+								<span id="edit-bio-status-msg" class="status-msg">Bio unchanged</span>
+								<button id='submit-changes'>Save all changes</button>
+							</submit>
+						</div>
+					</div>
 				</div>
-
-				<button>edit</button>
-				<div id="title-container">
-					<span class="imgholder">
-					<img src  ="https://media-exp1.licdn.com/dms/image/C4E0BAQFaTRiFFRRG9Q/company-logo_200_200/0/1519904079224?e=2159024400&v=beta&t=6_fyK0adSX2DrRMsyUTiudvIXpSmvIOiDZOIrwlBvYE" 
-						 style="width:100%;height:100%;">
-					</span>
-					
-				</div>
-				<div id="bios">
-					bios: <?php echo getBios($_SESSION["id"]) ?>
-				</div>
-				
+				<!--<div id="status-msg-container" class="hidden">
+					<span id="edit-img-status-msg" class="status-msg"></span>
+					<span id="edit-bio-status-msg" class="status-msg"></span>
+				</div>-->
+			</div>
 		</section>
 	</div>
 </body>

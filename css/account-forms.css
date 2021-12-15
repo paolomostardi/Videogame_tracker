@@ -39,6 +39,17 @@
 	padding:5px 20px;
 }
 
+#error-container {
+	display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 15px;
+}
+#error {
+	    color: #666;
+    font-size: 11pt;
+}
+
 #info-container {
 	display:flex;
 	margin-top:15px;

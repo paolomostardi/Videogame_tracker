@@ -1,7 +1,25 @@
 <?php
-	require("main.php");
-	require("db-connection.php");
-	$pagename = basename(__FILE__, '.php');
+require("main.php");
+require("db-connection.php");
+$pagename = basename(__FILE__, '.php');
+
+function displayError() {
+	if (!isset($_GET["error"]))
+		return;
+	
+	$msg = "";
+	switch ($_GET["error"]) {
+		case 1:
+			$msg = "Missing username or password!";
+			break;
+		case 2:
+			$msg = "Incorrect password!";
+			break;
+	}
+	echo '<div id="error-container"><span id="error">'.$msg.'</span></div>';
+	return;
+}
+
 ?>
 
 <html>
@@ -34,6 +52,7 @@
 					<div id="submit-container">
 						<button id="submit">login</button>
 					</div>
+					<?php displayError(); ?>
 				</form>
 				<div id="info-container">
 					<span>don't have an account? <a href="register.php">create one here</a>!</span>

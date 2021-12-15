@@ -1,12 +1,153 @@
-.imgholder {
-	width:175px;
-	height:175px;
-	background-color:rgb(251, 216, 216);
+#profile-container {
+	display: flex;
+    flex-direction: column;
+    width: 45%;
+}
+
+#profile {
+	display:flex;
+	flex-direction:row;
+	justify-content:center;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #aaa;
+    position: relative;
+}
+#profile .altbtn {
+	position:absolute;
+    top:0;
+    right:5%;
+	z-index:10;
+}
+#profile .altbtn[selected] {
+	background-color: #999;
+    color: white;
 }
 
 
-.coverimg-container,
-.details {
+#img-container {
+	position:relative;
+}
+#profile-img {
+	width:250px;
+	height:250px;
+	background-color:rgb(251, 216, 216);
+}
+#edit-img-container {
+	position:absolute;
+	bottom:5px;
+	left:5px;
 	display:flex;
 	flex-direction:column;
+	background-color:rgba(0,0,0,0.3);
+	border:1px solid black;
+}
+#fileupload-img-btn {
+	margin:3px;
+}
+#fileupload-img-btn {
+	background-color:whitesmoke;
+	border:1px solid gray;
+	border-radius:3px;
+	font-size:10pt;
+	padding:5px;
+	cursor:pointer;
+}
+#fileupload-img-btn:hover {
+	background-color:lightgray;
+}
+
+
+
+#username-bio-container {
+	display:flex;
+	flex-direction:column;
+	margin:0 10px;
+	width:calc(100% - 270px);
+	height:250px;
+}
+
+#username-container {
+	display:flex;
+	margin-bottom:15px;
+}
+#username {
+	font-weight:bold;
+	text-decoration:underline;
+	font-size:16pt;
+}
+
+#bio-container {
+	height:210px;
+	overflow:auto;
+}
+#bio {
+	overflow-wrap: break-word;
+}
+
+#new-bio {
+	width:100%;
+	height:184px;
+	font-size:12pt;
+	margin-bottom:5px;
+	resize:none;
+}
+
+
+#submit-changes {
+
+}
+
+/*#status-msg-container {
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	justify-content:center;
+	margin-top:10px;
+}*/
+#submit-container {
+	display:flex;
+	align-items:center;
+	justify-content:flex-end;
+}
+.status-msg {
+    color: #666;
+    font-size: 11pt;
+	padding:0 7px;
+	border-right:1px dotted #666;
+}
+.status-msg:first-of-type {
+	padding-left:0;
+}
+.status-msg:last-of-type {
+	margin-right:7px;
+}
+
+
+@media (max-width:850px)  {
+	#profile-container {
+		width:100%;
+	}
+	#profile {
+		flex-direction:column;
+	}
+	#profile-img,#img-container {
+		width:100%;
+		height:100%;
+	}
+	#username-bio-container {
+		margin-top:10px;
+		width:100%;
+		height:unset;
+		margin:unset;
+		margin-top:10px;
+	}
+	#username-container {
+		margin-bottom:10px;
+		justify-content:center;
+	}
+	#bio-container {
+		margin-top:unset;
+		height:250px;
+	}
 }

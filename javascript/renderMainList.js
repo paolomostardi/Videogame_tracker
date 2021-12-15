@@ -32,6 +32,6 @@ data: { "idGame": idGame,
 success: function(response) { console.log(response); }
 });
 
-alert("game added successfully ")
+alert("Game added successfully!");
 
 }

@@ -1,6 +1,26 @@
 <?php
 require("main.php");
 $pagename = basename(__FILE__, '.php');
+
+function displayError() {
+	if (!isset($_GET["error"]))
+		return;
+	
+	$msg = "";
+	switch ($_GET["error"]) {
+		case 1:
+			$msg = "Required fields are missing!";
+			break;
+		case 2:
+			$msg = "Passwords do not match!";
+			break;
+		case 3:
+			$msg = "Server error - try again later.";
+			break;
+	}
+	echo '<div id="error-container"><span id="error">'.$msg.'</span></div>';
+	return;
+}
 ?>
 
 <html>
@@ -36,8 +56,9 @@ $pagename = basename(__FILE__, '.php');
 						<input id="email" name="email" type="text" placeholder="example@mail.com">
 					</div>
 					<div id="submit-container">
-						<input type="submit" value="Register">
+						<button id="submit">register</button>
 					</div>
+					<?php displayError(); ?>
 				</form>
 				<div id="info-container">
 					<span>already have an account? <a href="login.php">login here</a></span>

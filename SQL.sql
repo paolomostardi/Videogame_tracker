@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 13, 2021 at 06:52 PM
+-- Generation Time: Dec 15, 2021 at 09:18 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -39,7 +39,26 @@ CREATE TABLE `list` (
 --
 
 INSERT INTO `list` (`list_id`, `user_id`, `name`, `description`) VALUES
-(3, 3, 'Main-list', 'Main list, of the user ben');
+(22, 22, 'Main-list', 'Main list, of the user gardinbe');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `profile_images`
+--
+
+CREATE TABLE `profile_images` (
+  `id` int(11) NOT NULL,
+  `path` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `profile_images`
+--
+
+INSERT INTO `profile_images` (`id`, `path`) VALUES
+(0, 'default.png'),
+(82, 'Gentle Rapids.jpg');
 
 -- --------------------------------------------------------
 
@@ -61,7 +80,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `username`, `email`, `password`, `bios`, `image_id`) VALUES
-(3, 'ben', 'ben', 'ben', '\'I like videogames\'', 0);
+(22, 'gardinbe', 'gardinbe@gmail.com', '$2y$10$LVSbvKlhI7C1SlPypJte5uD6y0ptCTbjwu1TfqbnMr8PdsQNeeZDS', 'This website is really cool!', 82);
 
 -- --------------------------------------------------------
 
@@ -103,8 +122,8 @@ CREATE TABLE `videogame_list_connection` (
 --
 
 INSERT INTO `videogame_list_connection` (`videogame_id`, `list_id`) VALUES
-(1, 3),
-(2, 3);
+(3, 22),
+(4, 22);
 
 --
 -- Indexes for dumped tables
@@ -117,10 +136,17 @@ ALTER TABLE `list`
   ADD PRIMARY KEY (`list_id`);
 
 --
+-- Indexes for table `profile_images`
+--
+ALTER TABLE `profile_images`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`user_id`);
+  ADD PRIMARY KEY (`user_id`),
+  ADD KEY `profile_images` (`image_id`);
 
 --
 -- Indexes for table `videogame`
@@ -139,10 +165,26 @@ ALTER TABLE `videogame_list_connection`
 --
 
 --
+-- AUTO_INCREMENT for table `profile_images`
+--
+ALTER TABLE `profile_images`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
+
+--
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `user`
+--
+ALTER TABLE `user`
+  ADD CONSTRAINT `profile_images` FOREIGN KEY (`image_id`) REFERENCES `profile_images` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

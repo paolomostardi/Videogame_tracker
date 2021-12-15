@@ -27,13 +27,16 @@ function renderUserList($nameGame,$descriptionGame,$gameId){
 ?>
 
 <span>
-    <?php 
-        foreach($videogameListId as $videogameId){
-            $name = getVideogameName($videogameId);
-            $descriptionGame = getVideogameDescription($videogameId);
-            renderUserList($name,$descriptionGame,$videogameId);
-
-       }
+    <?php
+		if (empty($videogameListId)) {
+			echo "<div style='text-align:center;'>You have no games in your list!<br>Add some games from <a href='game-list.php'>here</a>.</div>";
+		} else {
+			foreach($videogameListId as $videogameId){
+				$name = getVideogameName($videogameId);
+				$descriptionGame = getVideogameDescription($videogameId);
+				renderUserList($name,$descriptionGame,$videogameId);
+			}
+		}
     ?>
 </span> 
 

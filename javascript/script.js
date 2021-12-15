@@ -26,7 +26,10 @@ function remove(idGame,idUser){
             "idUser": idUser,
             "call"  : 1
           },
-    success: function(response) { console.log(response); }
+    success: function(response) {
+		alert("Game removed!");
+		location.reload();
+	}
   });
 
 }

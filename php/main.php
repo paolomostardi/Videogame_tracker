@@ -4,7 +4,7 @@ session_start();
 $_SESSION["loggedin"] = $_SESSION["loggedin"] ?? false;
 
 //gets the current working directory
-define("ROOT", getcwd().DIRECTORY_SEPARATOR);
+define("ROOT", dirname(__DIR__));
 
 //adds the head html elements
 function htmlHead($pagename) {
@@ -19,7 +19,7 @@ function htmlHead($pagename) {
 function htmlHeader($page = "") {
 	$n1 = $n2 = $n3 = $a1 = $a2 = "";
 	switch ($page) {
-		case "game":
+		case "game-list":
 			$n1 = "selected";
 			break;
 		case "user-list":

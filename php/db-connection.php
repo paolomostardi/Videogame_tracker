@@ -118,6 +118,53 @@ function getMainListOfGames(){
 	return $rows;
 }
 
+function updateBio($newBio, $userID) {
+	$conn = OpenCon();
+	$stmt = $conn->prepare("update user set bios = ? where (user_id = ?)");
+	$stmt->bind_param("si", $newBio, $userID);
+	$stmt->execute();
+	if ($conn->affected_rows !== 1)
+		return false;
+	
+	return true;
+}
+
+function updateImg($imgName, $userID) {
+	$conn = OpenCon();
+	$conn->begin_transaction();
+	
+	$stmt = $conn->prepare("insert into profile_images (path) values (?)");
+	$stmt->bind_param("s", $imgName);
+	$stmt->execute();
+	if ($conn->affected_rows !== 1) {
+		$conn->rollback();
+		return false;
+	}
+	$imgID = $stmt->insert_id;
+	
+	$stmt = $conn->prepare("update user set image_id = ? where (user_id = ?)");
+	$stmt->bind_param("ii", $imgID, $userID);
+	$stmt->execute();
+	if ($conn->affected_rows !== 1) {
+		$conn->rollback();
+		return false;
+	}
+	
+	$conn->commit();
+	return true;
+}
+
+function removeImg($img) {
+	$conn = OpenCon();
+	$stmt = $conn->prepare("delete from profile_images where (path = ?)");
+	$stmt->bind_param("s", $img);
+	$stmt->execute();
+	if ($conn->affected_rows !== 1)
+		return false;
+	
+	return true;
+}
+
 
 
  function removeGameFromUserList($listId,$gameId){
