@@ -40,7 +40,6 @@ if ($stmt->affected_rows !== 1) {
 
 $userID = $connection->insert_id;
 
-//create the user video game list in the database
 createVideoGameList($userID);
 
 //set the user session variables (log the user in)
