@@ -14,7 +14,7 @@ The Navbar is displayed at the top of every page.
 It contains links to different pages, allowing the user to easily navigate around the website.  
 Each of the webpages in this list will be accessible from the Navbar.
 
-### Master game list
+### Master/main game list
 The game list is a list of all the available games within the database.  
 The user can add games to their list by clicking the 'Add to list' button (while logged in). They can view the master game list on the 'Game list' page.
 
