@@ -1,7 +1,11 @@
 <?php
 /*
-this file does this thing
+displays the html for the game list
+
+the game list itself is actually fetched by javascript (renderMainList.js), and is inserted
+into the 'id=game-list' div. the php script that is fetched is another file, 'render-mainlist.php'.
 */
+
 
 require("main.php");
 require("db-connection.php");

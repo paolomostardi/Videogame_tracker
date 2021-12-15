@@ -1,8 +1,11 @@
+/*
+this script is used on the user list page (user-list.php), and it fetches the user's game list, as
+well as allowing the user to remove games from their list.
+*/
 
 
-
+//fetch the user's game list
 function renderList(){
-
         var xhttp = new XMLHttpRequest();
 
         xhttp.onreadystatechange = function() {
@@ -16,7 +19,7 @@ function renderList(){
 
 renderList();
 
-
+//remove a game from user's game list
 function remove(idGame,idUser){
 
   $.ajax({

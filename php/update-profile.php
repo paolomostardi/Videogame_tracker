@@ -1,10 +1,20 @@
 <?php
+/*
+this script will be called from javascript (profile.js) that is ran on the user profile page (profile.php).
+
+depending on the GET request, the user can choose to update their bio or the profile picture/image.
+*/
+
+
 require("main.php");
 require("db-connection.php");
 $pagename = basename(__FILE__, '.php');
 
 switch ($_GET["req"]) {
+	
+	//if the user wants to change their bio
 	case "bio":
+		//no bio was given
 		if (! isset($_POST["bio"]))
 			die([false, "Server error - try again later"]);
 		
@@ -21,7 +31,10 @@ switch ($_GET["req"]) {
 		exit([true]);
 		//break;
 	
+	
+	//if the user wants to change their image
 	case "img":
+		//no image was given
 		if (! isset($_FILES["img"]["name"]))
 			die([false, "No image was uploaded!"]);
 		

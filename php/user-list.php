@@ -1,4 +1,11 @@
 <?php
+/*
+this display the html for the user's game list.
+
+the user's game list itself is actually fetched by javascript (render.js), and is inserted
+into the 'id=game-list' div. the php script that is fetched is another file, 'render.php'.
+*/
+
 
 require("main.php");
 require("db-connection.php");

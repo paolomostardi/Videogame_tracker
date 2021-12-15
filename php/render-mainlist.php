@@ -1,5 +1,11 @@
-
 <?php 
+/*
+this script is called by javascript (script.js) ran on the main game list (game-list.php).
+
+it creates the main game list and displays it on the game-list page.
+*/
+
+
 require("main.php");
 require("db-connection.php");
 $videogameList = getMainListOfGames();

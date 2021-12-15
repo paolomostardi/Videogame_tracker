@@ -1,8 +1,17 @@
 <?php
+/*
+this displays the html for the login page.
+
+it can display an error message if there was an error when
+the user attempted to login.
+*/
+
+
 require("main.php");
 require("db-connection.php");
 $pagename = basename(__FILE__, '.php');
 
+//display the error message if there was an error
 function displayError() {
 	if (!isset($_GET["error"]))
 		return;

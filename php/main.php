@@ -1,6 +1,14 @@
 <?php
+/*
+this script contains functions and variables used by many of the other
+scripts on this site.
+*/
+
+
+//start sessions
 session_start();
 
+//check if user is logged in
 $_SESSION["loggedin"] = $_SESSION["loggedin"] ?? false;
 
 //gets the current working directory
@@ -17,6 +25,7 @@ function htmlHead($pagename) {
 
 //adds the html header, which has the navbar and shit
 function htmlHeader($page = "") {
+	//bad method of checking which web page is currently selected
 	$n1 = $n2 = $n3 = $a1 = $a2 = "";
 	switch ($page) {
 		case "game-list":

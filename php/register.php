@@ -1,7 +1,16 @@
 <?php
+/*
+this displays the html for the register account page.
+
+it can display an error message if there was an error when
+the user attempted to register.
+*/
+
+
 require("main.php");
 $pagename = basename(__FILE__, '.php');
 
+//display the error message if there was an error
 function displayError() {
 	if (!isset($_GET["error"]))
 		return;

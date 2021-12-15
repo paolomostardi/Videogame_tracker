@@ -1,15 +1,24 @@
 <?php
+/*
+this script is called when the 'login' button is clicked on the user login page (login.php). it
+logs the user into their account if the username and password are correct.
+*/
+
+
 require("main.php");
 require("db-connection.php");
 
+//if any form data is missing
 if (!isset($_POST["username"]) or !isset($_POST["password"]))
 	die();
 
+//if any form data is empty
 if (empty($_POST["username"]) or empty($_POST["password"])) {
 	header("location: login.php?error=1");
 	die();
 }
 
+//check to see if the password is correct
 $connection = OpenCon();
 $stmt = $connection->prepare("SELECT * FROM user WHERE username = ?");
 $stmt -> bind_param("s", $_POST["username"]);
@@ -18,6 +27,7 @@ $result = $stmt->get_result();
 $user = $result->fetch_assoc();
 
 $hashedPwd = $user["password"];
+//if passwords do not match
 if (! password_verify($_POST["password"], $hashedPwd)) {
 	header("location: login.php?error=2");
 	die();
@@ -43,6 +53,7 @@ if ($path == "default.png") {
 	$path = "/upload/img/".$path;
 }
 
+//set the user session variables (log the user in)
 $_SESSION["loggedin"] = true;
 $_SESSION["id"] = $id;
 $_SESSION["username"] = $username; 

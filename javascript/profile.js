@@ -1,7 +1,18 @@
+/*
+this script will be ran on the user profile page (profile.php).
+
+it can update the user's bio and profile image by calling 'update-profile.php', with valid data. checks
+are made to ensure that the user is inputting valid data (such as, an image being too big). these
+checks are also done server-side.
+
+it also shows/hides elements, updates the text content of elements, and performs a few other simple
+tasks.
+*/
+
+
 $(function() {
 	
-	let statusMsgContainer = $("#status-msg-container");
-	
+	//declare some frequently used elements
 	let bio = $("#bio");
 	let newBio = $("#new-bio")
 		
@@ -11,33 +22,35 @@ $(function() {
 	let editBtn = $("#edit");
 	let submitContainer = $("#submit-container");
 	
+	
+	
+	//if the 'edit mode' button is clicked, toggle the 'edit' view on/off depending on the current state
 	let editMenuOpen = false;
-	
-	
 	editBtn.click(function(e) {
 		if (! editMenuOpen) {
-			//image
+			//show edit image
 			editImg.removeClass("hidden");
-			//bio
+			//show edit bio
 			newBio.val(bio.text());
 			bio.addClass("hidden");
 			editBio.removeClass("hidden");
-			
+			//show submit button and status messages
 			submitContainer.removeClass("hidden");
 			
 			editMenuOpen = true;
+			//edit button selected
 			editBtn[0].setAttribute("selected", true);
 		} else {
-			//image
+			//hide edit image
 			editImg.addClass("hidden");
-			//bio
+			//hide edit bio
 			editBio.addClass("hidden");
 			bio.removeClass("hidden");
-			
+			//hide submit button and status messages
 			submitContainer.addClass("hidden");
-			statusMsgContainer.addClass("hidden");
 			
 			editMenuOpen = false;
+			//edit button unselected
 			editBtn[0].removeAttribute("selected");
 		}
 	});
@@ -45,21 +58,12 @@ $(function() {
 	let imgStatusMsg = $("#edit-img-status-msg");
 	let bioStatusMsg = $("#edit-bio-status-msg");
 	
+	//change the text in the status message boxes
 	let msg = function(msg, type) {
 		if (type == "img") {
 			imgStatusMsg.html(msg);
-			statusMsgContainer.removeClass("hidden");
-			/*let timeout = setTimeout(function() {
-				statusMsgContainer.addClass("hidden");
-				imgStatusMsg.html("");
-			}, 4000); */
 		} else if (type == "bio") {
 			bioStatusMsg.html(msg);
-			statusMsgContainer.removeClass("hidden");
-			/*let timeout = setTimeout(function() {
-				statusMsgContainer.addClass("hidden");
-				bioStatusMsg.html("");
-			}, 4000); */
 		}
 	}
 	
@@ -67,11 +71,10 @@ $(function() {
 	let validFileCheck = function(fileUploaderElmt, fileTypes, maxSize) {
 		// Only allow specified filetypes
 		if (! fileTypes.includes(fileUploaderElmt.files[0].type)) {
-			let str = ""+fileTypes[0].split("/")[1].toUpperCase()+"";
-			for (let i=1; i<fileTypes.length-1; i++) {
-				str += ", "+fileTypes[i].split("/")[1].toUpperCase()+"";
-			}
-			if (fileTypes.length > 1) 
+			let str = fileTypes[0].split("/")[1].toUpperCase();
+			for (let i=1; i<fileTypes.length-1; i++)
+				str += ", "+fileTypes[i].split("/")[1].toUpperCase();
+			if (fileTypes.length > 1)
 				str += " or "+fileTypes[fileTypes.length-1].split("/")[1].toUpperCase()+"";
 			return [false, "This file is not a "+str+"!"];
 		}
@@ -110,29 +113,39 @@ $(function() {
 	let fileUploadImg = $("#fileupload-img");
 	let profileImg = $("#profile-img");
 	
+	//when 'select image' is clicked
 	fileUploadImg.on("change", function(e) {
+		//allowed image types
 		let validFileTypes = ["image/png", "image/jpeg", "image/gif"];
+		//maximum image size
 		let maxSize = 3145728; // 3MB
-		
+		//check to see if the image is valid with parameters defined above
 		let vfc = validFileCheck(this, validFileTypes, maxSize);
 		
 		if (vfc[0] == false) {
+			//file is not valid
 			alert(vfc[1]);
+			//unset current file
 			this.value = "";
 			return;
-		} else {
-			msg(vfc[1], "img");
 		}
+		
+		//file is valid
+		msg(vfc[1], "img");
 
 		let img = this.files[0];
+		//display the profile image as the user selected image
 		profileImg.attr("src", URL.createObjectURL(img));
 	});
 	
-	let submitImg = function() {		
+	//submit image
+	let submitImg = function() {
 		return new Promise(function(resolve, reject) {
 			let fd = new FormData();
+			//add file to data
 			let file = fileUploadImg[0].files[0];
 			
+			//if file not submitted (invalid file)
 			if (typeof file == "undefined") {
 				reject("Image unchanged");
 				return;
@@ -140,6 +153,7 @@ $(function() {
 			
 			fd.append("img", file);
 			
+			//send file data to 'update-profile.php'
 			$.ajax({
 				url: '../php/update-profile.php?req=img',
 				type: 'post',
@@ -164,20 +178,25 @@ $(function() {
 	
 	
 	//bio
+	
+	//submit bio
 	let submitBio = function() {
 		return new Promise(function(resolve, reject) {
 			let newBioText = newBio.val();
-		
+			
+			//if bio is empty
 			if (newBioText == "") {
 				reject("Bio is empty");
 				return;
 			}
 			
+			//if bio has not changed
 			if (newBioText == bio.text()) {
 				reject("Bio unchanged");
 				return;
 			}
 			
+			//send new bio data to 'update-profile.php'
 			$.ajax({
 				url: '../php/update-profile.php?req=bio',
 				type: 'post',
@@ -186,6 +205,7 @@ $(function() {
 					if (! resp[0]) {
 						reject(resp[1]);
 					} else {
+						//update bio text
 						bio.text(newBioText);
 						resolve("Bio saved");
 					}
@@ -201,40 +221,14 @@ $(function() {
 	let submitBtn = $("#submit-changes");
 	
 	submitBtn.click(function(e) {
-		/*let i = 0;
-		let errs = [];
-		
-		let callback = function() {
-			i++;			
-			if (i !== 2)
-				return;
-			
-			if (errs.length == 0) {
-				msg("Changes saved!");
-				return;
-			}
-			
-			//scuffed
-			let errMsg = "";
-			if (errs.length > 0) {		
-				errs.forEach(function(err, index) {
-					if (index == errs.length-1) {
-						errMsg = errMsg+err;
-						return;
-					}
-					errMsg = errMsg+err+"<br>";
-				});
-			}
-			
-			msg(errMsg);
-		}*/
-		
+		//submit the image
 		submitImg().then(function(success) {
 			msg(success, "img");
 		}).catch(function(error) {
 			msg(error, "img");
 		});
 		
+		//submit the new bio
 		submitBio().then(function(success) {
 			msg(success, "bio");
 		}).catch(function(error) {

@@ -1,4 +1,9 @@
 <?php
+/*
+this displays the html for the user profile page.
+*/
+
+
 require("main.php");
 require("db-connection.php");
 $pagename = basename(__FILE__, '.php');
@@ -54,10 +59,6 @@ $username = getUsername($_SESSION["id"]);
 						</div>
 					</div>
 				</div>
-				<!--<div id="status-msg-container" class="hidden">
-					<span id="edit-img-status-msg" class="status-msg"></span>
-					<span id="edit-bio-status-msg" class="status-msg"></span>
-				</div>-->
 			</div>
 		</section>
 	</div>
