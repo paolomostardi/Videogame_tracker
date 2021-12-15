@@ -69,7 +69,7 @@
 
 #username-container {
 	display:flex;
-	margin-bottom:15px;
+	margin-bottom:10px;
 }
 #username {
 	font-weight:bold;
@@ -83,6 +83,7 @@
 }
 #bio {
 	overflow-wrap: break-word;
+	white-space: pre-line;
 }
 
 #new-bio {
