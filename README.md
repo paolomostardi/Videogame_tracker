@@ -12,7 +12,7 @@ __3.__ Start Apache and MySQL (for XAMPP: open the control panel and click start
 __4.__ If using XAMPP or phpMyAdmin, Navigate to _localhost/phpmyadmin_ in a web browser.  
 __3.__ Create a new database in MySQL or phpMyAdmin, and for example call it __videogame_tracker__.  
 __4.__ Import the __SQL.sql__ file into the new database (phpMyAdmin: click on the 'import' tab within the database you just made, and navigate to __SQL.sql__. Then click _Go_).  
-__5.__ Open the file __database.cfg__ and configure the settings correctly (for XAMPP, the default values are already defined here):    
+__5.__ Open the file __database.cfg__ and configure the settings appropriately (for XAMPP, the default values are already defined here):    
 ```
 [access-info]
 hostname = "localhost"
