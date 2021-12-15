@@ -1,4 +1,8 @@
 <?php
+/*
+this file does this thing
+*/
+
 require("main.php");
 require("db-connection.php");
 $pagename = basename(__FILE__, '.php');
