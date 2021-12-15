@@ -20,7 +20,7 @@ The game list is a list of all the available games within the database. The user
 All the games that the user has added to their list will be added to their user list. They can access their list on the 'My list' page.
 
 ### Use profile
-The user can view their own profile on the 'My profile' page. They will be able to see their username, profile picture and bio.
+The user can view their own profile on the 'My profile' page. They will be able to see their username, profile picture and bio. They will also be able to change their profile picture and bio too
 
 ### Login page
 The user can login to their account (assuming they already have one) at the login page. They will be required to enter their username and password to login.
