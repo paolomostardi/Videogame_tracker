@@ -3,6 +3,7 @@
 
 /*
 * this file is used to render the user videogame list 
+* it's called in script.js
 */
 require("main.php");
 require("db-connection.php");
