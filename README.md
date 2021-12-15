@@ -4,7 +4,7 @@
 This application allows users to create their own list of games which they enjoy. They can create and edit their profile as well.
 
 ## Installation 
-This program was developed and tested using XAMPP.  
+This application was developed and tested using XAMPP.  
   
 __1.__ Install XAMPP (or equivalent), or (UNTESTED) manually install Apache and MySQL. There are no specific apache/php/mysql configurations required.  
 __2.__ Creator a folder in the htdocs folder in XAMPP or Apache installation. Then clone/download the repository and extract the files to a new folder within the htdocs folder.  
