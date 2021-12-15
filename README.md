@@ -21,7 +21,7 @@ password = ""
 #the name of the database you just created
 database = "videogame_tracker"
 ```  
-__6.__ Navigate to _localhost/[relative-path-to-extracted-repository]_
+__6.__ Navigate to _localhost/[relative-path-to-extracted-repository]/index.php_
 
 ## Main features/webpages
 
