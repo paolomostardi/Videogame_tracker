@@ -7,7 +7,7 @@
 
 body {
 	margin:0;
-	background-color:#ccfbec;
+	background-color:#e9f2f9;
 }
 
 form {
@@ -44,6 +44,17 @@ input[type="password"]  {
 	transition:background-color 0.1s, color 0.1s;
 	color:white;
 	cursor:hand;
+}
+
+.section-title-container {
+	font-weight:bold;
+	font-size:14pt;
+	text-decoration:underline;
+    background-color: unset;
+	margin:unset !important;
+    text-shadow: 1px 1px white;
+	border:unset !important;
+	background-color:unset !important;
 }
 
 #main-section {

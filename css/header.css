@@ -16,9 +16,21 @@
 	display:flex;
 	width:100%;
 	align-items:center;
-	justify-content:space-between;
-	background-color:#ddd;
+	justify-content:flex-start;
+	background-color:#cedcef;
 	border-bottom:1px solid black;
+}
+
+#page-title {
+	display:flex;
+	font-size:14pt;
+	padding:8px 20px;
+	font-style:italic;
+	color:black;
+	text-decoration:unset;
+	font-weight:bold;
+	text-shadow: 1px 1px #fff;
+	border-right:1px dotted black;
 }
 
 

@@ -28,6 +28,9 @@ if (is_null($listID)) {
 	</script>
 	<div id="content">
 		<section id="main-section">
+			<div class="section-title-container">
+				<span id="section-title">User game list</span>
+			</div>
 			<div id="game-list">
 			</div>
 		</section>

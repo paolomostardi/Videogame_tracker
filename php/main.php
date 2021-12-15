@@ -38,7 +38,7 @@ function htmlHeader($page = "") {
 	
 	echo '<div id="header">
 		<div id="navbar">
-		
+			<a id="page-title" href="game-list.php">Videogame Tracker</a>
 			<div id="navbtns">
 				<div class="navbtn-container">
 					<a class="navbtn" id="nav-game-list" href="game-list.php" '.$n1.'>game list</a>

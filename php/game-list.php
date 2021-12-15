@@ -20,6 +20,9 @@ $pagename = basename(__FILE__, '.php');
 	</script>
 	<div id="content">
 		<section id="main-section">
+			<div class="section-title-container">
+				<span id="section-title">Main game list</span>
+			</div>
 			<div id="game-list">
 			</div>
 		</section>
