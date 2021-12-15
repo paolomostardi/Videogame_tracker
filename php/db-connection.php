@@ -1,5 +1,49 @@
 <?php
 
+
+/*
+*	db-connection.php
+*	author: paolo
+*	list of functions in alphabetical order:
+
+*	OpenCon():
+	Establish a connection with mysql database.
+	Uses the credential secified in database.cfg
+
+*	addGameToList($listId,$gameId):
+*	CloseCon($conn)
+*	createVideogameList($userId)
+*	getAttributeFromTable($attributeToGet,$tableFrom,$primaryKey):
+	take as an input an attribute a table and an id, then run a sql query to search for it.
+	Returns null in case of not match. 
+
+*	All the following functions use getAttributeFrom table to get the specified attirubute:
+
+*	getBios($userId)
+* 	getListId($userId)
+*	getUsername($userId)
+*	getUserImageId($userId)
+*	getVideogameName($gameId)
+*	getVideogameDescription($gameId)
+*
+*	getGames($userId):
+	run an sql query to obtain games from a list
+*	getListOfGames($userId):
+	obtain a list id form the user and the use it to return a list of games.
+*	getMainListOfGames()
+	obtain the homepage gamelist
+* 	
+*	updateBio($newBio, $userID)
+*	updateImg($imgName, $userID)
+*	removeImg($img)
+*	removeGameFromUserList($listId,$gameId)
+*
+*
+*
+*
+*/
+
+
 function OpenCon() {
 	$cfg = parse_ini_file(dirname(getcwd())."/database.cfg");
 	
