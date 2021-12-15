@@ -52,7 +52,7 @@ function displayError() {
 						<input id="confirm-password" name="confirm-password" type="password" placeholder="confirm password...">
 					</div>
 					<div class="input-container" id="confirm-password-container">
-						<span>insert email:</span>
+						<span>email:</span>
 						<input id="email" name="email" type="text" placeholder="example@mail.com">
 					</div>
 					<div id="submit-container">

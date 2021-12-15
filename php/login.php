@@ -42,11 +42,11 @@ function displayError() {
 				</div>
 				<form action="access.php" method="post" id="login-form" class="account-form">
 					<div class="input-container" id="username-container">
-						<span>Username</span>
+						<span>username:</span>
 						<input id="username" name="username" type="text" placeholder="username...">
 					</div>
 					<div class="input-container" id="password-container">
-						<span>Password</span>
+						<span>password:</span>
 						<input id="password" name="password" type="password" placeholder="password...">
 					</div>
 					<div id="submit-container">
