@@ -22,8 +22,8 @@ The user can add games to their list by clicking the 'Add to list' button (while
 All the games that the user has added to their list will be added to their user list.  
 They can access their list on the 'My list' page.
 
-### Use profile
-The user can view their own profile on the 'My profile' page.  
+### User profile
+The user can view their own profile on the 'Profile' page.  
 They will be able to see their username, profile picture and bio, as well as change their profile picture and bio too.
 
 ### Login page
