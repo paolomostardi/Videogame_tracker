@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 require("main.php");
 require("db-connection.php");
 
