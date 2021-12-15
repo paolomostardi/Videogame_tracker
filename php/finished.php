@@ -1,6 +1,6 @@
 <?php
 /*
-this script is called when the 'register' button is clicked on the registeraccount
+this script is called when the 'register' button is clicked on the register account
 page (register.php). it adds the user data to the database and logs the user in if
 the data is valid.
 */
