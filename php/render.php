@@ -1,9 +1,15 @@
 
 <?php 
+
+/*
+* this file is used to render the user videogame list 
+*/
 require("main.php");
 require("db-connection.php");
 $videogameListId = getListOfGames($_SESSION["id"]);
 
+
+// render one single element of the list
 function renderUserList($nameGame,$descriptionGame,$gameId){
     $userId = $_SESSION["id"];
     echo(
@@ -28,6 +34,8 @@ function renderUserList($nameGame,$descriptionGame,$gameId){
 
 <span>
     <?php
+		
+		// check for empty list 
 		if (empty($videogameListId)) {
 			echo "<div style='text-align:center;'>You have no games in your list!<br>Add some games from <a href='game-list.php'>here</a>.</div>";
 		} else {
