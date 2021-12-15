@@ -3,6 +3,12 @@
 ## Overview
 This application allows users to create a list of games which they enjoy. They can create and login to an account, and they can remove/add games from their list.
 
+## installation 
+This program  uses php and mysql so you will need to install those on your machine if you haven't done so already.
+It has been tested with a xampp control panel, so in order to run it you will need an apache web server and a mysql database.
+
+## main features
+
 ### The navigation bar (Navbar)
 The Navbar is displayed at the top of every page. It contains the links to all the different pages, allowing the user to easily navigate around the website.
 Each of the following pages will be available within the Navbar:
@@ -21,33 +27,4 @@ The user can login to their account (assuming they already have one) at the logi
 
 ### Register account page
 The user can register an account on the website at the register account page. They will be required to enter a username, password and email. They will also be asked to confirm their password to ensure they have spelt it correctly.
-
-## A more in-depth look at each process in the program
-
-### Master game list
-
-```javascript
-function addToList(idGame,idUser) {
-    if (idUser == 0){
-        alert("please login first");
-        return;
-    }
-    
-    // when the 'add to list' button is clicked, ajax sends a post request containing data about the selected game.
-    // if the server responds, and adds the game to the user's list successfully, then an alert is displayed
-    
-    $.ajax({
-        url: '../php/db-connection.php',
-        type: 'post',
-        data: { 
-            "idGame": idGame,
-            "idUser": idUser,
-            "call"  : 2
-        },
-        success: function(response) { console.log(response); }
-    });
-    
-    alert("game added successfully ");
-}
-```
 
