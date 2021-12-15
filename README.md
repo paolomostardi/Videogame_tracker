@@ -20,7 +20,7 @@ The user can add games to their own list by clicking the 'Add to list' button (w
 
 ### User game list page
 The user will be able to view their game list on the 'My list' page.  
-All the games that the user has added from the main game list will be added to their game list.  
+All the games that the user has added (from the main game list) will be added to their game list.  
 The user can remove games from their game list by clicking the 'Remove from list' button (while logged in).
 
 ### User profile page
