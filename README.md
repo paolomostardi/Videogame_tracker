@@ -1,7 +1,7 @@
 # Videogame tracker
 
 ## Overview
-This application allows users to create a list of games which they enjoy. They can create and login to an account, and they can remove/add games from their list.
+This application allows users to create their own list of games which they enjoy. They can create and edit their profile as well.
 
 ## Installation 
 This program was developed and tested using XAMPP.  
