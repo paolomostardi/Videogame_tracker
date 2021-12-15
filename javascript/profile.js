@@ -87,6 +87,7 @@ $(function() {
 				max = max/1024;
 				i+= 1;
 			}
+			let unit = "bits";
 			switch (i) {
 				case 0:
 					unit = "B";
