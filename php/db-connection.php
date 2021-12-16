@@ -41,8 +41,12 @@
 *
 *
 *
+*
+*
+*
+*
+*
 */
-
 
 function OpenCon() {
 	$cfg = parse_ini_file(dirname(getcwd())."/database.cfg");
@@ -68,6 +72,7 @@ function createVideoGameList($userId){
   $sql 		      = "INSERT INTO list (description, list_id, name, user_id)
                    VALUES ('$description', '$userId', '$name','$userId')";
   $connection  ->query($sql);
+  CloseCon($connection);
 
  }
 
@@ -79,6 +84,7 @@ function getAttributeFromTable($attributeToGet,$tableFrom,$primaryKey) {
 	$result	    = $stmt->get_result();
 	$row        = $result->fetch_row();
 	$val        = is_null($row) ? NULL : $row[0];
+	CloseCon($connection);
 	return $val;
  }
 
@@ -125,6 +131,7 @@ function getUsername($userId)
   while(!is_null($a = $result->fetch_row() )){
     array_push($rows,$a[0]);
   }
+  CloseCon($connection);
 	return $rows;
  }
 
@@ -167,9 +174,11 @@ function updateBio($newBio, $userID) {
 	$stmt = $conn->prepare("update user set bios = ? where (user_id = ?)");
 	$stmt->bind_param("si", $newBio, $userID);
 	$stmt->execute();
-	if ($conn->affected_rows !== 1)
+	if ($conn->affected_rows !== 1){
+		CloseCon($connection);
 		return false;
-	
+	}
+	CloseCon($conn);
 	return true;
 }
 
@@ -195,6 +204,7 @@ function updateImg($imgName, $userID) {
 	}
 	
 	$conn->commit();
+	CloseCon($conn);
 	return true;
 }
 
@@ -225,6 +235,7 @@ function removeImg($img) {
   $sql 		= "INSERT INTO videogame_list_connection (videogame_id, list_id)
         		 VALUES ('$gameId', '$listId')";
 	$result 	= $connection->query($sql);
+  CloseCon($connection);
  }
  
 
