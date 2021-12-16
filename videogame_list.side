@@ -1,0 +1,898 @@
+{
+  "id": "c092644e-d52a-4ed0-ae63-1b377dade611",
+  "version": "2.0",
+  "name": "videogame_list",
+  "url": "http://localhost/Videogame_tracker/",
+  "tests": [{
+    "id": "702bf566-6b93-4e20-80c6-6a4b485f9ee2",
+    "name": "1 account registration",
+    "commands": [{
+      "id": "dc13e5c8-50d5-4b8c-9638-b71ee0bd622b",
+      "comment": "",
+      "command": "open",
+      "target": "/Videogame_tracker/php/game-list.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c5b577cc-16ec-43d1-b602-aa37b40741b8",
+      "comment": "",
+      "command": "click",
+      "target": "id=nav-register",
+      "targets": [
+        ["id=nav-register", "id"],
+        ["linkText=register", "linkText"],
+        ["css=#nav-register", "css:finder"],
+        ["xpath=//a[contains(text(),'register')]", "xpath:link"],
+        ["xpath=//a[@id='nav-register']", "xpath:attributes"],
+        ["xpath=//div[@id='altbtns']/div[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'register.php')]", "xpath:href"],
+        ["xpath=//div[2]/div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'register')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "47a166c6-c902-4920-a612-1edcfa957b4b",
+      "comment": "",
+      "command": "click",
+      "target": "id=register-form-container",
+      "targets": [
+        ["id=register-form-container", "id"],
+        ["css=#register-form-container", "css:finder"],
+        ["xpath=//div[@id='register-form-container']", "xpath:attributes"],
+        ["xpath=//section[@id='main-section']/div", "xpath:idRelative"],
+        ["xpath=//section/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fe51daa2-f914-46f7-a8ae-5aedfcac4244",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=login here",
+      "targets": [
+        ["linkText=login here", "linkText"],
+        ["css=span > a", "css:finder"],
+        ["xpath=//a[contains(text(),'login here')]", "xpath:link"],
+        ["xpath=//div[@id='info-container']/span/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'login.php')])[2]", "xpath:href"],
+        ["xpath=//span/a", "xpath:position"],
+        ["xpath=//a[contains(.,'login here')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "51590f01-fe67-4f69-ad3e-678d6f6254f1",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=title",
+      "targets": [
+        ["id=title", "id"],
+        ["css=#title", "css:finder"],
+        ["xpath=//span[@id='title']", "xpath:attributes"],
+        ["xpath=//div[@id='title-container']/span", "xpath:idRelative"],
+        ["xpath=//span", "xpath:position"],
+        ["xpath=//span[contains(.,'create an account')]", "xpath:innerText"]
+      ],
+      "value": "login"
+    }, {
+      "id": "547ef81f-ba70-4424-8b32-59e3be9eae35",
+      "comment": "",
+      "command": "click",
+      "target": "id=nav-register",
+      "targets": [
+        ["id=nav-register", "id"],
+        ["linkText=register", "linkText"],
+        ["css=#nav-register", "css:finder"],
+        ["xpath=//a[contains(text(),'register')]", "xpath:link"],
+        ["xpath=//a[@id='nav-register']", "xpath:attributes"],
+        ["xpath=//div[@id='altbtns']/div[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'register.php')]", "xpath:href"],
+        ["xpath=//div[2]/div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'register')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "da862a3b-c965-40eb-89ab-277af539c72b",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=title",
+      "targets": [
+        ["id=title", "id"],
+        ["css=#title", "css:finder"],
+        ["xpath=//span[@id='title']", "xpath:attributes"],
+        ["xpath=//div[@id='title-container']/span", "xpath:idRelative"],
+        ["xpath=//span", "xpath:position"],
+        ["xpath=//span[contains(.,'create an account')]", "xpath:innerText"]
+      ],
+      "value": "create an account"
+    }, {
+      "id": "35b51b31-d6a8-4664-a12d-e13b156a40e2",
+      "comment": "",
+      "command": "click",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//div[@id='username-container']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "36600bc2-03e0-44cc-9a54-f680101b2ef2",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=login here",
+      "targets": [
+        ["linkText=login here", "linkText"],
+        ["css=span > a", "css:finder"],
+        ["xpath=//a[contains(text(),'login here')]", "xpath:link"],
+        ["xpath=//div[@id='info-container']/span/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'login.php')])[2]", "xpath:href"],
+        ["xpath=//span/a", "xpath:position"],
+        ["xpath=//a[contains(.,'login here')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "20615941-e5a3-431e-8ebf-0724309532ca",
+      "comment": "",
+      "command": "click",
+      "target": "id=nav-register",
+      "targets": [
+        ["id=nav-register", "id"],
+        ["linkText=register", "linkText"],
+        ["css=#nav-register", "css:finder"],
+        ["xpath=//a[contains(text(),'register')]", "xpath:link"],
+        ["xpath=//a[@id='nav-register']", "xpath:attributes"],
+        ["xpath=//div[@id='altbtns']/div[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'register.php')]", "xpath:href"],
+        ["xpath=//div[2]/div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'register')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f7648d51-4d4b-43d3-b5c7-035edde88d6c",
+      "comment": "",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//div[@id='username-container']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "username"
+    }, {
+      "id": "d7295859-f958-4487-b437-6b6908918bb2",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='password-container']/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "password"
+    }, {
+      "id": "a78efe5f-2698-40fa-b276-6710495007dc",
+      "comment": "",
+      "command": "type",
+      "target": "id=confirm-password",
+      "targets": [
+        ["id=confirm-password", "id"],
+        ["name=confirm-password", "name"],
+        ["css=#confirm-password", "css:finder"],
+        ["xpath=//input[@id='confirm-password']", "xpath:attributes"],
+        ["xpath=//div[@id='confirm-password-container']/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "password"
+    }, {
+      "id": "6a47bc66-c7e8-44a2-81c2-cdb96d09f546",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=(//div[@id='confirm-password-container']/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": "username"
+    }, {
+      "id": "2c49a9a5-bf4e-4ef5-b395-864457b5734f",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=(//div[@id='confirm-password-container']/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": "${KEY_UP}"
+    }, {
+      "id": "5fbea759-523f-439e-9bc7-42e41957e0fb",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=(//div[@id='confirm-password-container']/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": "email@gmail.com"
+    }, {
+      "id": "781eec8c-7bb2-47e0-9de5-8dcb244deb46",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=(//div[@id='confirm-password-container']/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "89d8e56f-cf87-4b89-8dab-7af072bf4703",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "id=bio-container",
+      "targets": [
+        ["id=bio-container", "id"],
+        ["css=#bio-container", "css:finder"],
+        ["xpath=//div[@id='bio-container']", "xpath:attributes"],
+        ["xpath=//div[@id='username-bio-container']/div[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "414096e8-691f-4877-b47f-2d01de43761d",
+      "comment": "",
+      "command": "click",
+      "target": "id=nav-logout",
+      "targets": [
+        ["id=nav-logout", "id"],
+        ["linkText=logout", "linkText"],
+        ["css=#nav-logout", "css:finder"],
+        ["xpath=//a[contains(text(),'logout')]", "xpath:link"],
+        ["xpath=//a[@id='nav-logout']", "xpath:attributes"],
+        ["xpath=//div[@id='altbtns']/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'logout.php')]", "xpath:href"],
+        ["xpath=//div[2]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'logout')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "2c796647-e4fd-4229-96d5-a43a10e7d1da",
+    "name": "0 unregister user ",
+    "commands": [{
+      "id": "8aa567b5-b142-4bcc-8a79-3681bcfde258",
+      "comment": "",
+      "command": "open",
+      "target": "/Videogame_tracker/php/game-list.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a54f9fcb-57ea-405e-a38d-ab6dc3280add",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.game:nth-child(1) > .details",
+      "targets": [
+        ["css=.game:nth-child(1) > .details", "css:finder"],
+        ["xpath=//div[@id='game-list']/span/div/div[2]", "xpath:idRelative"],
+        ["xpath=//span/div/div[2]", "xpath:position"]
+      ],
+      "value": "Assassins Creed\\nAssassins Creed is all about assassinating people!"
+    }, {
+      "id": "80e436f1-8ec9-42ea-9b22-2928bf15fadb",
+      "comment": "",
+      "command": "click",
+      "target": "css=.game:nth-child(1) > .altbtn",
+      "targets": [
+        ["css=.game:nth-child(1) > .altbtn", "css:finder"],
+        ["xpath=//button[@onclick='addToList(1,0)']", "xpath:attributes"],
+        ["xpath=//div[@id='game-list']/span/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'add to list')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e7e12f79-8d53-405d-a12a-8248dbabc992",
+      "comment": "",
+      "command": "click",
+      "target": "id=navbar",
+      "targets": [
+        ["id=navbar", "id"],
+        ["css=#navbar", "css:finder"],
+        ["xpath=//div[@id='navbar']", "xpath:attributes"],
+        ["xpath=//div[@id='header']/div", "xpath:idRelative"],
+        ["xpath=//div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "75f44c78-46a9-48a0-8e14-4c72b25be022",
+      "comment": "",
+      "command": "assertAlert",
+      "target": "please login first",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "576c64b4-2d9a-4a21-88f4-690b6c271983",
+      "comment": "",
+      "command": "click",
+      "target": "id=nav-user-list",
+      "targets": [
+        ["id=nav-user-list", "id"],
+        ["linkText=my list", "linkText"],
+        ["css=#nav-user-list", "css:finder"],
+        ["xpath=//a[contains(text(),'my list')]", "xpath:link"],
+        ["xpath=//a[@id='nav-user-list']", "xpath:attributes"],
+        ["xpath=//div[@id='navbtns']/div[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'user-list.php')]", "xpath:href"],
+        ["xpath=//div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'my list')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6595effc-8a51-4e9a-a1e5-a49500624e25",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "id=title",
+      "targets": [
+        ["id=title", "id"],
+        ["css=#title", "css:finder"],
+        ["xpath=//span[@id='title']", "xpath:attributes"],
+        ["xpath=//div[@id='title-container']/span", "xpath:idRelative"],
+        ["xpath=//span", "xpath:position"],
+        ["xpath=//span[contains(.,'login')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "395eaebd-86bf-446e-a1ba-edf64006c7af",
+      "comment": "",
+      "command": "click",
+      "target": "id=nav-game-list",
+      "targets": [
+        ["id=nav-game-list", "id"],
+        ["linkText=game list", "linkText"],
+        ["css=#nav-game-list", "css:finder"],
+        ["xpath=//a[contains(text(),'game list')]", "xpath:link"],
+        ["xpath=//a[@id='nav-game-list']", "xpath:attributes"],
+        ["xpath=//div[@id='navbtns']/div/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'game-list.php')])[2]", "xpath:href"],
+        ["xpath=//div/div/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'game list')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b7184487-5b99-4d7e-8937-1a752a64d79a",
+      "comment": "",
+      "command": "click",
+      "target": "id=nav-profile",
+      "targets": [
+        ["id=nav-profile", "id"],
+        ["linkText=my profile", "linkText"],
+        ["css=#nav-profile", "css:finder"],
+        ["xpath=//a[contains(text(),'my profile')]", "xpath:link"],
+        ["xpath=//a[@id='nav-profile']", "xpath:attributes"],
+        ["xpath=//div[@id='navbtns']/div[3]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'profile.php')]", "xpath:href"],
+        ["xpath=//div[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'my profile')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ca960ba8-2cf3-4959-8f12-49910d3353c6",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "id=title",
+      "targets": [
+        ["id=title", "id"],
+        ["css=#title", "css:finder"],
+        ["xpath=//span[@id='title']", "xpath:attributes"],
+        ["xpath=//div[@id='title-container']/span", "xpath:idRelative"],
+        ["xpath=//span", "xpath:position"],
+        ["xpath=//span[contains(.,'login')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "d3904844-0d4a-4d80-9e69-d79bb490a5fc",
+    "name": "2 user login",
+    "commands": [{
+      "id": "4d8bc4b3-b8d9-4c35-a8a6-ae18081ae27e",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/Videogame_tracker/php/game-list.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "438490a6-edfc-41fe-a6d2-5e216241513f",
+      "comment": "",
+      "command": "click",
+      "target": "id=nav-login",
+      "targets": [
+        ["id=nav-login", "id"],
+        ["linkText=login", "linkText"],
+        ["css=#nav-login", "css:finder"],
+        ["xpath=//a[contains(text(),'login')]", "xpath:link"],
+        ["xpath=//a[@id='nav-login']", "xpath:attributes"],
+        ["xpath=//div[@id='altbtns']/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'login.php')]", "xpath:href"],
+        ["xpath=//div[2]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'login')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f6dceea7-f0fa-499e-a83f-e7e8651e9a4f",
+      "comment": "",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//div[@id='username-container']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "username"
+    }, {
+      "id": "408225c7-43d3-4948-82a1-c50120acf7a9",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='password-container']/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "notpassword"
+    }, {
+      "id": "67b6be72-58e5-4a88-8b6f-72e17b05ef31",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='password-container']/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "75efd29d-b9b6-478b-9187-394c6764b448",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "id=error",
+      "targets": [
+        ["id=error", "id"],
+        ["css=#error", "css:finder"],
+        ["xpath=//span[@id='error']", "xpath:attributes"],
+        ["xpath=//div[@id='error-container']/span", "xpath:idRelative"],
+        ["xpath=//div[4]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Incorrect password!')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3d332c5e-6567-46a1-99b7-787878a7d94e",
+      "comment": "",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//div[@id='username-container']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "notusername"
+    }, {
+      "id": "7415394a-032a-48cd-80cf-a0a863967c86",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='password-container']/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "password"
+    }, {
+      "id": "c4d46749-2877-451c-9b6c-97d6f0c6cb3a",
+      "comment": "",
+      "command": "click",
+      "target": "id=submit",
+      "targets": [
+        ["id=submit", "id"],
+        ["css=#submit", "css:finder"],
+        ["xpath=//button[@id='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='submit-container']/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'login')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5e2eefa2-3d2c-4f91-8c98-274948a5be96",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "id=error",
+      "targets": [
+        ["id=error", "id"],
+        ["css=#error", "css:finder"],
+        ["xpath=//span[@id='error']", "xpath:attributes"],
+        ["xpath=//div[@id='error-container']/span", "xpath:idRelative"],
+        ["xpath=//div[4]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Incorrect password!')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "55c40298-2f88-4abd-a8f2-3836cf4d910b",
+      "comment": "",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//div[@id='username-container']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "username"
+    }, {
+      "id": "6ca24610-b632-42f2-b17b-b814f012fbb2",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='password-container']/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "password"
+    }, {
+      "id": "25d47fdf-5455-4f04-a826-8d39f26201d7",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='password-container']/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "e41c4034-3d57-43f3-abd3-a5316855d1de",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "id=bio-container",
+      "targets": [
+        ["id=bio-container", "id"],
+        ["css=#bio-container", "css:finder"],
+        ["xpath=//div[@id='bio-container']", "xpath:attributes"],
+        ["xpath=//div[@id='username-bio-container']/div[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "d89906d4-44d5-4ac2-b828-b8423b940915",
+    "name": "3 homepage game list ",
+    "commands": [{
+      "id": "5e326b42-167b-434f-94e4-77b8624864b5",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/Videogame_tracker/php/game-list.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "83de86c7-af85-43da-858e-41e944907b80",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "30b65b8c-3cbd-44f9-b59b-0044b991f7c1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.game:nth-child(1) > .altbtn",
+      "targets": [
+        ["css=.game:nth-child(1) > .altbtn", "css:finder"],
+        ["xpath=//button[@onclick='addToList(1,24)']", "xpath:attributes"],
+        ["xpath=//div[@id='game-list']/span/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'add to list')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ef9ce3e9-ffbd-4826-95c0-3c4ce340a4e4",
+      "comment": "",
+      "command": "assertAlert",
+      "target": "Game added successfully!",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a2c6d667-c992-41f7-8e31-8e58ca836ddb",
+      "comment": "",
+      "command": "click",
+      "target": "css=.game:nth-child(2) > .altbtn",
+      "targets": [
+        ["css=.game:nth-child(2) > .altbtn", "css:finder"],
+        ["xpath=//button[@onclick='addToList(2,24)']", "xpath:attributes"],
+        ["xpath=//div[@id='game-list']/span/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f8e3459f-3825-4df3-aee8-33aa018cf49f",
+      "comment": "",
+      "command": "assertAlert",
+      "target": "Game added successfully!",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ecd1ceb6-191b-4588-94b5-00d9da62538e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.game:nth-child(5) > .altbtn",
+      "targets": [
+        ["css=.game:nth-child(5) > .altbtn", "css:finder"],
+        ["xpath=//button[@onclick='addToList(5,24)']", "xpath:attributes"],
+        ["xpath=//div[@id='game-list']/span/div[5]/button", "xpath:idRelative"],
+        ["xpath=//div[5]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7c98985e-3d6b-44f7-bdeb-42d536125bfb",
+      "comment": "",
+      "command": "assertAlert",
+      "target": "Game added successfully!",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "f4049240-9bcd-4067-bbfc-1d2dfc25aa17",
+    "name": "4 user list",
+    "commands": [{
+      "id": "5564ff19-dddd-4c07-8519-780b21222518",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/Videogame_tracker/php/game-list.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "35852a86-0f3b-4d49-b31b-fbeafe945bbc",
+      "comment": "",
+      "command": "click",
+      "target": "id=nav-user-list",
+      "targets": [
+        ["id=nav-user-list", "id"],
+        ["linkText=my list", "linkText"],
+        ["css=#nav-user-list", "css:finder"],
+        ["xpath=//a[contains(text(),'my list')]", "xpath:link"],
+        ["xpath=//a[@id='nav-user-list']", "xpath:attributes"],
+        ["xpath=//div[@id='navbtns']/div[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'user-list.php')]", "xpath:href"],
+        ["xpath=//div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'my list')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bfcbecb7-3a47-47b0-bf7c-7d912c6ac37e",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.game:nth-child(1)",
+      "targets": [
+        ["css=.game:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='game-list']/span/div", "xpath:idRelative"],
+        ["xpath=//span/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3bb050a6-cb37-4649-89b6-876492a81f2a",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.game:nth-child(2)",
+      "targets": [
+        ["css=.game:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='game-list']/span/div[2]", "xpath:idRelative"],
+        ["xpath=//span/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3ab09d20-4d2c-4ea7-9632-ac7cd1d903ed",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.game:nth-child(3)",
+      "targets": [
+        ["css=.game:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='game-list']/span/div[3]", "xpath:idRelative"],
+        ["xpath=//span/div[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f02b209e-3b75-4724-b70a-5946697ef6be",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.game:nth-child(3) .title",
+      "targets": [
+        ["css=.game:nth-child(3) .title", "css:finder"],
+        ["xpath=//div[@id='game-list']/span/div[3]/div[2]/span", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/span", "xpath:position"]
+      ],
+      "value": "Far Cry"
+    }, {
+      "id": "a4129ef7-91cb-4ee4-a9bb-e13933a09f9f",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.game:nth-child(2) .title",
+      "targets": [
+        ["css=.game:nth-child(2) .title", "css:finder"],
+        ["xpath=//div[@id='game-list']/span/div[2]/div[2]/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/span", "xpath:position"]
+      ],
+      "value": "Dark Souls"
+    }, {
+      "id": "e4433e25-2a16-4ecc-ac47-0b2258d9ae83",
+      "comment": "",
+      "command": "click",
+      "target": "css=.game:nth-child(1) > .altbtn",
+      "targets": [
+        ["css=.game:nth-child(1) > .altbtn", "css:finder"],
+        ["xpath=//button[@onclick='remove(1,24)']", "xpath:attributes"],
+        ["xpath=//div[@id='game-list']/span/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'remove')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bc8006c8-9f03-4dd0-934b-45abbe4ecce2",
+      "comment": "",
+      "command": "assertAlert",
+      "target": "Game removed!",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6ac28ab3-c87b-44a2-8b87-86e9106f239a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.game:nth-child(2) > .altbtn",
+      "targets": [
+        ["css=.game:nth-child(2) > .altbtn", "css:finder"],
+        ["xpath=//button[@onclick='remove(5,24)']", "xpath:attributes"],
+        ["xpath=//div[@id='game-list']/span/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "213d53d5-2953-427c-8fed-20edaf05361d",
+      "comment": "",
+      "command": "assertAlert",
+      "target": "Game removed!",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "0ff59544-029b-4dfb-aadb-3070f8ee28bd",
+    "name": "5 logout",
+    "commands": [{
+      "id": "6115e093-02e2-4e1a-b228-912dbbf1e5eb",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/Videogame_tracker/php/game-list.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "dd5d1034-3f3c-457d-8b5b-49960a3c9c98",
+      "comment": "",
+      "command": "click",
+      "target": "id=nav-logout",
+      "targets": [
+        ["id=nav-logout", "id"],
+        ["linkText=logout", "linkText"],
+        ["css=#nav-logout", "css:finder"],
+        ["xpath=//a[contains(text(),'logout')]", "xpath:link"],
+        ["xpath=//a[@id='nav-logout']", "xpath:attributes"],
+        ["xpath=//div[@id='altbtns']/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'logout.php')]", "xpath:href"],
+        ["xpath=//div[2]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'logout')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4fb50534-f1c1-4c03-ad53-236bf58f6a0e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.game:nth-child(1) > .altbtn",
+      "targets": [
+        ["css=.game:nth-child(1) > .altbtn", "css:finder"],
+        ["xpath=//button[@onclick='addToList(1,0)']", "xpath:attributes"],
+        ["xpath=//div[@id='game-list']/span/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'add to list')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a0b84092-90e7-4fdf-90eb-f11dfcd93b83",
+      "comment": "",
+      "command": "assertAlert",
+      "target": "please login first",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "52a85b73-b918-4415-9268-4f3454387871",
+      "comment": "",
+      "command": "click",
+      "target": "id=nav-user-list",
+      "targets": [
+        ["id=nav-user-list", "id"],
+        ["linkText=my list", "linkText"],
+        ["css=#nav-user-list", "css:finder"],
+        ["xpath=//a[contains(text(),'my list')]", "xpath:link"],
+        ["xpath=//a[@id='nav-user-list']", "xpath:attributes"],
+        ["xpath=//div[@id='navbtns']/div[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'user-list.php')]", "xpath:href"],
+        ["xpath=//div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'my list')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8b22cab4-74bf-4451-8f87-c404839a5b18",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=title",
+      "targets": [
+        ["id=title", "id"],
+        ["css=#title", "css:finder"],
+        ["xpath=//span[@id='title']", "xpath:attributes"],
+        ["xpath=//div[@id='title-container']/span", "xpath:idRelative"],
+        ["xpath=//span", "xpath:position"],
+        ["xpath=//span[contains(.,'login')]", "xpath:innerText"]
+      ],
+      "value": "login"
+    }]
+  }],
+  "suites": [{
+    "id": "334436fb-c9e3-456c-b8a4-d69488b19d0a",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["702bf566-6b93-4e20-80c6-6a4b485f9ee2"]
+  }],
+  "urls": ["http://localhost/", "http://localhost/Videogame_tracker/"],
+  "plugins": []
+}
