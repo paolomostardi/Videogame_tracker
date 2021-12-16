@@ -23,7 +23,7 @@ function htmlHead($pagename) {
 	<link rel="stylesheet" href="../css/'.$pagename.'.css">';
 }
 
-//adds the html header, which has the navbar and shit
+//adds the html header, which has the navbar
 function htmlHeader($page = "") {
 	//bad method of checking which web page is currently selected
 	$n1 = $n2 = $n3 = $a1 = $a2 = "";
